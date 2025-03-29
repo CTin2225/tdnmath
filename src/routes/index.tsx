@@ -3,7 +3,7 @@ import { ComponentProps } from "preact"
 function Mode(props: { accent?: string } & ComponentProps<"a">) {
 	return (
 		<a href={props.href}
-			class="w-full text-lg p-4 border-2 border-[var(--accent)] hover:bg-[var(--accent)] rounded-lg text-[var(--accent)] hover:text-white text-center transition-all"
+			class="w-full text-lg p-4 bg-white/10 backdrop-blur-xl border-2 border-[var(--accent)] hover:bg-[var(--accent)] rounded-lg text-[var(--accent)] hover:text-white text-center transition-all"
 			style={{ "--accent": props.accent ?? "#2196f3" }}
 		>
 			{props.children}
@@ -33,6 +33,14 @@ export default function Home() {
 					</strong>
 					<p>
 						Thách đấu với bạn bè!
+					</p>
+				</Mode>
+				<Mode accent="#FF9800" href="/leaderboard">
+					<strong class="text-2xl">
+						Bảng xếp hạng
+					</strong>
+					<p>
+						Xem ai là người giỏi nhất!
 					</p>
 				</Mode>
 				<Mode accent="#000" href="/browser">
