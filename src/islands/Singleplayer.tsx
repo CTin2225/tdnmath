@@ -99,8 +99,12 @@ export default function Singleplayer(props: { questions: Question[] }) {
 			timerProgress.value = 0
 			clearTimeout(timeout.current)
 
-			const id = localStorage.getItem("id")
-				|| Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+			let id = localStorage.getItem("id")
+
+			if (!id) {
+				id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+				localStorage.setItem("id", id)
+			}
 
 			let name: string | null = ""
 			while (!name?.trim().length && name !== null) name = prompt("Nhập tên của bạn để lưu điểm số, hoặc hủy để quay về trang chính")

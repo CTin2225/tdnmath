@@ -5,7 +5,10 @@ export const handler: Handlers = {
 		const data = await req.json()
 		const kv = await Deno.openKv()
 		const { id, score, name } = data
-		await kv.set(["singlescores", id], { score, name })
+		const oldScore = await kv.get<{ score: number; name: string }>(["singlescores", id])
+		if (oldScore.value?.score && oldScore.value.score > score) {
+			await kv.set(["singlescores", id], { score, name })
+		}
 		return new Response("OK", { status: 200 })
 	},
 }
