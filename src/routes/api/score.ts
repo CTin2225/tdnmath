@@ -11,4 +11,19 @@ export const handler: Handlers = {
 		}
 		return new Response("OK", { status: 200 })
 	},
+
+	OPTIONS() {
+		return new Response("OK", {
+			headers: {
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Methods": "POST, OPTIONS",
+				"Access-Control-Allow-Headers": "Content-Type",
+			},
+		})
+	},
+
+	GET(req: Request) {
+		console.log("GET received at /api/score/", req.url)
+		return new Response("Method Not Allowed", { status: 405 })
+	},
 }

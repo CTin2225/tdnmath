@@ -114,11 +114,16 @@ export default function Singleplayer(props: { questions: Question[] }) {
 				return
 			}
 
-			fetch(`${globalThis.location.origin}/api/score/`, {
+			const url = `${globalThis.location.origin}/api/score/`
+			const options = {
 				method: "POST",
 				headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
 				body: JSON.stringify({ score: score.value, name, id }),
-			})
+			}
+			console.log("Fetching:", url, options)
+			fetch(url, options)
+				.then(res => console.log("Response:", res.status, res.statusText))
+				.catch(err => console.error("Error:", err))
 		}
 		const timeLimit = timerLengthMap[q.difficulty - 1] * 1000
 		const startTime = performance.now()
