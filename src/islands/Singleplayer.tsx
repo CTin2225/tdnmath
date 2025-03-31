@@ -114,7 +114,7 @@ export default function Singleplayer(props: { questions: Question[] }) {
 				return
 			}
 
-			fetch("/api/score/", {
+			fetch(`${globalThis.location.origin}/api/score/`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
 				body: JSON.stringify({ score: score.value, name, id }),
