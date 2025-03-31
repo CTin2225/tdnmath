@@ -9,7 +9,7 @@ export const handler: Handlers = {
 		const { id, score, name } = data
 		const oldScore = await kv.get<{ score: number; name: string }>(["singlescores", id])
 		console.log(oldScore)
-		if (oldScore.value?.score && oldScore.value.score > score) {
+		if (oldScore.value?.score && oldScore.value.score < score) {
 			await kv.set(["singlescores", id], { score, name })
 		}
 		return new Response("OK", { status: 200 })

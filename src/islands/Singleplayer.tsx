@@ -28,11 +28,11 @@ const bgMap = [
 ]
 
 const timerLengthMap = [
-	25,
-	30,
-	35,
 	40,
 	45,
+	50,
+	55,
+	60,
 ]
 
 export default function Singleplayer(props: { questions: Question[] }) {
@@ -41,10 +41,10 @@ export default function Singleplayer(props: { questions: Question[] }) {
 	const timerProgress = useSignal(0)
 
 	const currentQuestion = useSignal(0)
-	const answers = useSignal(Array(questions.length).fill(-1))
+	const answers = useSignal(Array(questions.length).fill(null))
 
 	const skipButton = useRef<HTMLButtonElement>(null)
-	const answer = useSignal<string | number>(-1)
+	const answer = useSignal<string | number | null>(null)
 	const showAnswer = useSignal(false)
 	const timeout = useRef<number>()
 
@@ -63,9 +63,9 @@ export default function Singleplayer(props: { questions: Question[] }) {
 		)
 	}
 
-	const isCorrect = (qi: number, ans: string | number) => {
+	const isCorrect = (qi: number, ans: string | number | null) => {
 		const q = questions[qi]
-		if (!q.answer) return false
+		if (ans === null) return false
 		return ans.toString().toLowerCase().replaceAll(",", ".") === q.answer.toString().toLowerCase().replaceAll(",", ".")
 	}
 
@@ -84,12 +84,12 @@ export default function Singleplayer(props: { questions: Question[] }) {
 			showAnswer.value = true
 		}
 
-		if (answer.value !== -1) answers.value[qi] = answer.value
+		answers.value[qi] = answer.value
 		answers.value = [...answers.value]
 
 		timeout.current = setTimeout(() => {
 			currentQuestion.value = Math.min(qi + 1, questions.length)
-			answer.value = -1
+			answer.value = null
 			showAnswer.value = false
 		}, mode === "skip" ? 0 : 5000)
 	}
@@ -136,7 +136,7 @@ export default function Singleplayer(props: { questions: Question[] }) {
 			if (remaining > 0) {
 				animationFrameId = requestAnimationFrame(animate)
 			} else {
-				proceed(answer.value !== -1 ? "submit" : "skip")
+				proceed(answer.value !== null ? "submit" : "skip")
 			}
 		}
 
@@ -158,7 +158,7 @@ export default function Singleplayer(props: { questions: Question[] }) {
 					<div key={i} class={cn(
 						"flex-1 rounded-full h-2 transition-all",
 						diffBorderMap[questions[i].difficulty - 1],
-						c === -1
+						c === null
 							? (i === qi ? diffBgMap[q.difficulty - 1] : "bg-transparent")
 							: isCorrect(i, c)
 							? "bg-emerald-400"
@@ -209,7 +209,7 @@ export default function Singleplayer(props: { questions: Question[] }) {
 									class={cn(
 										"px-4 py-2 md:py-4 transition-all hover:translate-y-1 hover:shadow-none rounded-lg shadow-[0_4px_0_0] focus:ring-1 ring-black outline-none",
 										answer.value === c ? "animate-pulse translate-y-1 shadow-none" : "",
-										showAnswer.value && answer.value !== -1
+										showAnswer.value && answer.value !== null
 											? q.answer === i ? "bg-green-500 shadow-green-600" : "bg-red-500 shadow-red-600"
 											: bgMap[i],
 									)}
@@ -226,10 +226,10 @@ export default function Singleplayer(props: { questions: Question[] }) {
 								<input
 									type="text"
 									class="px-4 py-4 col-span-2 transition-all hover:translate-y-1 hover:shadow-[0_0_0_0] rounded-md bg-gray-500 shadow-[0_4px_0_0] shadow-gray-600"
-									value={answer.value === -1 ? "" : answer.value}
+									value={answer.value === null ? "" : answer.value}
 									onInput={e => {
 										const value = (e.target as HTMLInputElement).value
-										if (value.length === 0) answer.value = -1
+										if (value.length === 0) answer.value = null
 										else if (/^[0-9.,-]*$/.test(value)) answer.value = value
 									}}
 								/>
@@ -251,19 +251,19 @@ export default function Singleplayer(props: { questions: Question[] }) {
 								ref={skipButton}
 								class={cn(
 									"px-3 py-1.5 transition-all hover:translate-y-1 hover:shadow-[0_0_0_0] rounded-md shadow-[0_4px_0_0] disabled:opacity-50 focus:brightness-125 focus:ring-1 ring-zinc-300 outline-none",
-									answer.value !== -1 && !showAnswer.value
+									answer.value !== null && !showAnswer.value
 										? "bg-blue-500 shadow-blue-600 active:bg-blue-600"
 										: "bg-zinc-500 shadow-zinc-600 active:bg-zinc-600",
 								)}
 								onClick={() => {
-									proceed(answer.value !== -1 && !showAnswer.value ? "submit" : "skip")
+									proceed(answer.value !== null && !showAnswer.value ? "submit" : "skip")
 									const { current } = skipButton
 									if (!current) return
 									current.disabled = true
 									setTimeout(() => current.disabled = false, 10)
 								}}
 							>
-								{showAnswer.value ? "Tiếp" : answer.value !== -1 ? "Gửi" : "Bỏ qua"}
+								{showAnswer.value ? "Tiếp" : answer.value !== null ? "Gửi" : "Bỏ qua"}
 							</button>
 						</div>
 					</>
