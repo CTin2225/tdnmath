@@ -66,7 +66,7 @@ export default function Singleplayer(props: { questions: Question[] }) {
 	const isCorrect = (qi: number, ans: string | number) => {
 		const q = questions[qi]
 		if (!q.answer) return false
-		return ans.toString() === q.answer.toString()
+		return ans.toString().toLowerCase().replaceAll(",", ".") === q.answer.toString().toLowerCase().replaceAll(",", ".")
 	}
 
 	const choose = (choice: number) => answer.value = showAnswer.value ? answer.value : choice
@@ -75,7 +75,7 @@ export default function Singleplayer(props: { questions: Question[] }) {
 		clearTimeout(timeout.current)
 
 		if (mode !== "skip") {
-			if (answer.value.toString().toLowerCase().replaceAll(",", ".") === q.answer.toString().toLowerCase().replaceAll(",", ".")) {
+			if (isCorrect(qi, answer.value)) {
 				const maxTime = timerLengthMap[q.difficulty - 1] * 1000
 				const timeElapsed = maxTime - (timerProgress.value / 100) * maxTime
 				const pts = timeElapsed < 5000 ? 100 : Math.max(0, 100 - ((timeElapsed - 5000) / (maxTime - 5000)) * 100)
