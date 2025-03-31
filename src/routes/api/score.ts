@@ -21,9 +21,4 @@ export const handler: Handlers = {
 			},
 		})
 	},
-
-	GET(req: Request) {
-		console.log("GET received at /api/score/", req.url)
-		return new Response("Method Not Allowed", { status: 405 })
-	},
 }
