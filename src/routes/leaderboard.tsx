@@ -8,6 +8,7 @@ export default async function Leaderboard() {
 		scores.push(value)
 	}
 	scores.sort((a, b) => b.score - a.score)
+	console.log(scores)
 
 	let r = 0
 
