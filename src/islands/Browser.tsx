@@ -2,6 +2,7 @@ import { useSignal } from "@preact/signals"
 import katex from "katex"
 import { useEffect } from "preact/hooks"
 import { Question } from "../types.ts"
+import { PlayerID } from "./ID.tsx"
 
 const difficultyColorMap = [
 	"bg-gray-200",
@@ -75,25 +76,14 @@ export default function QuestionBrowser(props: { data: Question[] }) {
 					<img src={question.image.startsWith("http") ? question.image : `/questions/${question.image}`} alt="Question Image"
 						class="mt-2 rounded-md" />
 				)}
-				{question.a && question.b
+				{question.choices.length
 					? (
 						<ul class="flex flex-col gap-2 py-1">
-							<li class={`p-2 rounded ${question.answer?.toString().toLowerCase() === "a" ? "bg-green-400" : "bg-blue-100"}`}>
-								A: {renderMathText(question.a?.toString())}
-							</li>
-							<li class={`p-2 rounded ${question.answer?.toString().toLowerCase() === "b" ? "bg-green-400" : "bg-blue-100"}`}>
-								B: {renderMathText(question.b?.toString())}
-							</li>
-							{question.c && (
-								<li class={`p-2 rounded ${question.answer?.toString().toLowerCase() === "c" ? "bg-green-400" : "bg-blue-100"}`}>
-									C: {renderMathText(question.c?.toString())}
+							{question.choices.map((choice, i) => (
+								<li key={i} class={`p-2 rounded ${i === question.answer ? "bg-green-400" : "bg-blue-100"}`}>
+									{renderMathText(choice.toString())}
 								</li>
-							)}
-							{question.d && (
-								<li class={`p-2 rounded ${question.answer?.toString().toLowerCase() === "d" ? "bg-green-400" : "bg-blue-100"}`}>
-									D: {renderMathText(question.d?.toString())}
-								</li>
-							)}
+							))}
 						</ul>
 					)
 					: <div class="p-2 rounded bg-blue-300">Đáp án: {renderMathText(question.answer?.toString())}</div>}
@@ -106,6 +96,7 @@ export default function QuestionBrowser(props: { data: Question[] }) {
 					#{index.value + 1}/{question.id}
 				</span>
 			</div>
+			<PlayerID />
 		</div>
 	)
 }

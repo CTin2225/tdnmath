@@ -3,6 +3,7 @@ import katex from "katex"
 import { useEffect, useRef } from "preact/hooks"
 import { Question } from "../types.ts"
 import { cn } from "../utils.ts"
+import { genId, PlayerID } from "./ID.tsx"
 
 const diffBgMap = [
 	"bg-purple-300",
@@ -99,12 +100,8 @@ export default function Singleplayer(props: { questions: Question[] }) {
 			timerProgress.value = 0
 			clearTimeout(timeout.current)
 
-			let id = localStorage.getItem("id")
-
-			if (!id) {
-				id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
-				localStorage.setItem("id", id)
-			}
+			const id = localStorage.getItem("playerID") ?? genId()
+			localStorage.setItem("playerID", id)
 
 			let name: string | null = ""
 			while (!name?.trim().length && name !== null) name = prompt("Nhập tên của bạn để lưu điểm số, hoặc hủy để quay về trang chính")
@@ -149,6 +146,7 @@ export default function Singleplayer(props: { questions: Question[] }) {
 
 	return (
 		<div class="flex flex-1 flex-col w-full gap-4">
+			<PlayerID class="absolute" />
 			<div class="sticky top-4 z-10 flex gap-4 justify-center items-center bg-white/50 backdrop-blur border border-gray-300/60 rounded-xl px-2 py-1 w-max mx-auto shadow-lg">
 				<span>Điểm</span>
 				<span class="text-2xl font-bold">{score.value}</span>
