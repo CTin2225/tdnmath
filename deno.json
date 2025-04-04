@@ -5,9 +5,9 @@
 		"cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
 		"manifest": "deno task cli manifest $(pwd)",
 		"start": "deno run --unstable-broadcast-channel --unstable-kv -A --watch=src/static/,src/routes/ src/dev.ts",
-		"build": "deno run --unstable-kv -A src/dev.ts build",
-		"preview": "deno run --unstable-kv -A src/main.ts",
-		"update": "deno run --unstable-kv -A -r https://fresh.deno.dev/update ."
+		"build": "deno run --unstable-broadcast-channel --unstable-kv -A src/dev.ts build",
+		"preview": "deno run --unstable-broadcast-channel --unstable-kv -A src/main.ts",
+		"update": "deno run --unstable-broadcast-channel --unstable-kv -A -r https://fresh.deno.dev/update ."
 	},
 	"lint": {
 		"rules": {
