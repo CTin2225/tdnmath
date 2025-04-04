@@ -97,7 +97,7 @@ export function MultiplayerClient() {
 			type: "answer",
 			data: {
 				id: playerid.value,
-				status: answers.value.map((c, i) => c === null ? 0 : isCorrect(i, c) ? 1 : -1),
+				answers: answers.value,
 				score: score.value,
 			},
 		}))
@@ -145,17 +145,36 @@ export function MultiplayerClient() {
 					break
 				}
 
-				case "start": {
+				case "join": {
+					if (!data.data.answers || !data.data.questions || data.data.status !== "playing") return
+					answers.value = data.data.answers
+					score.value = data.data.score
 					questionsList.value = data.data.questions
-					answer.value = null
+					const curQ = 10 - answers.value.toReversed().findIndex((a, i) => a !== null && i < questionsList.value.length)
+					currentQuestion.value = curQ === -1 ? 0 : curQ
+					break
+				}
+
+				case "start": {
+					score.value = 0
+					questionsList.value = data.data.questions
 					answers.value = Array(questionsList.value.length).fill(null)
-					showAnswer.value = false
 					currentQuestion.value = 0
+					answer.value = null
+					showAnswer.value = false
+					timerProgress.value = 0
+					break
+				}
+
+				case "end":
+				case "reset": {
+					location.href = "/"
+					break
 				}
 			}
 		}
 
-		setInterval(() => ws.current?.send(JSON.stringify({ type: "ping" })), 5000)
+		setInterval(() => ws.current?.send(JSON.stringify({ type: "ping" })), 30000)
 	}, [])
 
 	useEffect(() => {
@@ -317,7 +336,7 @@ export function MultiplayerClient() {
 									const { current } = skipButton
 									if (!current) return
 									current.disabled = true
-									setTimeout(() => current.disabled = false, 10)
+									setTimeout(() => current.disabled = false, 1000)
 								}}
 							>
 								{showAnswer.value ? "Tiếp" : answer.value !== null ? "Gửi" : "Bỏ qua"}

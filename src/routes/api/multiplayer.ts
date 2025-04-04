@@ -1,4 +1,5 @@
 import { Handler } from "$fresh/server.ts"
+import { Room } from "../../types.ts"
 
 const channel = new BroadcastChannel("game")
 
@@ -22,7 +23,7 @@ const clients = new Map<string, WebSocket>()
 type Player = {
 	id: string
 	name: string
-	status: (-1 | 0 | 1)[]
+	answers: (string | number | null)[]
 	score: number
 }
 
@@ -43,20 +44,16 @@ export const handler: Handler = async (req, ctx) => {
 
 		if (id !== "host") {
 			const player = await kv.get<Player>(["players", id])
-			socket.send(JSON.stringify({ type: "welcome", data: { id, status: Array(10).fill(0), score: 0, ...player.value } }))
+			socket.send(JSON.stringify({ type: "welcome", data: { id, answers: Array(10).fill(null), score: 0, ...player.value } }))
 		} else {
 			const players = kv.list<Player>({ prefix: ["players"] })
 			for await (const player of players) {
-				if (player.value.id !== id) {
-					socket.send(JSON.stringify({ type: "join", data: { ...player.value } }))
-				}
+				if (player.value.id !== "host") socket.send(JSON.stringify({ type: "join", data: { ...player.value } }))
 			}
-		}
 
-		// Send current question to new client if game is running
-		// if (gameState === "running" && id !== "host" && currentQuestion) {
-		// 	socket.send(JSON.stringify({ type: "question", ...currentQuestion }))
-		// }
+			const room = await kv.get<Room>(["room"])
+			socket.send(JSON.stringify({ type: "gamestate", data: room.value?.status }))
+		}
 	}
 
 	socket.onmessage = async event => {
@@ -67,9 +64,23 @@ export const handler: Handler = async (req, ctx) => {
 			switch (data.type) {
 				case "join": {
 					clients.set(data.data.id, socket)
-					const playerData = { id: data.data.id, name: data.data.name.trim(), status: Array(10).fill(0), score: 0 }
+					const existingPlayer = await kv.get<Player>(["players", data.data.id])
+					const playerData = { id: data.data.id, name: data.data.name.trim(), answers: Array(10).fill(null), score: 0,
+						...existingPlayer.value }
 					await kv.set(["players", data.data.id], playerData)
+
+					const room = await kv.get<Room>(["room"])
+
 					findHostAndSend({ type: "join", data: playerData })
+					socket.send(JSON.stringify({ type: "join", data: { ...playerData, ...room.value } }))
+					return
+				}
+
+				case "answer": {
+					const player = await kv.get<Player>(["players", data.data.id])
+					if (!player.value) return
+					await kv.set(["players", data.data.id], { ...player.value, answers: data.data.answers, score: data.data.score })
+					findHostAndSend({ type: "answer", data: { ...player.value, answers: data.data.answers, score: data.data.score } })
 					return
 				}
 
@@ -80,30 +91,27 @@ export const handler: Handler = async (req, ctx) => {
 					return
 				}
 			}
-
-			findHostAndSend(data)
 		} else {
 			switch (data.type) {
 				case "end":
 				case "reset": {
-					// gameState = "idle"
 					for await (const entry of kv.list({ prefix: ["players"] })) await kv.delete(entry.key)
 					await kv.delete(["room"])
+					clients.clear()
+					break
+				}
+
+				case "start": {
+					const room = await kv.get<Room>(["room"])
+					console.log(room.value)
+					await kv.set(["room"], { ...room.value, status: "playing" })
 					break
 				}
 			}
 
 			broadcastToChannel(data)
-			console.log("Relayed to all clients:", data)
-
-			// handle game states
-			// if (data.type === "start") {
-			// 	gameState = "running"
-			// 	broadcastToClients({ type: "start" })
-			// } else if (data.type === "question") {
-			// 	currentQuestion = { question: data.question, options: data.options }
-			// 	broadcastToClients(data)
-			// }
+			broadcastToClients(data)
+			console.log("Relayed to all clients:", data.type === "start" ? "[questions]" : data)
 		}
 	}
 
@@ -123,12 +131,12 @@ export const handler: Handler = async (req, ctx) => {
 	return response
 }
 
-function findHostAndSend(data: object) {
+function findHostAndSend(data: Record<string, object | string | number>) {
 	relayToHost(data)
 	broadcastToChannel(data)
 }
 
-function relayToHost(data: object) {
+function relayToHost(data: Record<string, object | string | number>) {
 	if (clients.has("host")) {
 		const socket = clients.get("host")!
 		if (socket.readyState === WebSocket.OPEN) {
@@ -138,12 +146,12 @@ function relayToHost(data: object) {
 	}
 }
 
-function broadcastToChannel(data: object) {
+function broadcastToChannel(data: Record<string, object | string | number>) {
 	channel.postMessage(JSON.stringify(data))
-	console.log("Relayed to other isolates:", data)
+	console.log("Relayed to other isolates:", data.type === "start" ? "[questions]" : data)
 }
 
-function broadcastToClients(data: object) {
+function broadcastToClients(data: Record<string, object | string | number>) {
 	for (const [clientId, clientSocket] of clients) {
 		if (clientId !== "host" && clientSocket.readyState === WebSocket.OPEN) {
 			clientSocket.send(JSON.stringify(data))

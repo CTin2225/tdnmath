@@ -7,8 +7,9 @@ import { cn } from "../utils.ts"
 export function MultiplayerHost(props: { data: Room }) {
 	const { status, questions } = props.data
 	const ws = useRef<WebSocket | null>(null)
-	const players = useSignal<Map<string, { name: string; status: (-1 | 0 | 1)[]; score: number; connected: boolean }>>(new Map())
-	// const answers = useSignal<>(new Map())
+	const players = useSignal<Map<string, { name: string; answers: (string | number | null)[]; score: number; connected: boolean }>>(
+		new Map(),
+	)
 	const qr = useSignal<string | null>(null)
 	const start = useSignal(false)
 
@@ -47,7 +48,7 @@ export function MultiplayerHost(props: { data: Room }) {
 					if (data.data.id === "host") return
 					players.value.set(data.data.id, {
 						name: data.data.name,
-						status: data.data.status,
+						answers: data.data.answers,
 						score: data.data.score,
 						connected: true,
 					})
@@ -77,7 +78,7 @@ export function MultiplayerHost(props: { data: Room }) {
 				case "answer": {
 					const player = players.value.get(data.data.id)
 					if (!player) return
-					player.status = data.data.status
+					player.answers = data.data.answers
 					player.score = data.data.score
 					players.value.set(data.data.id, player)
 					players.value = new Map(players.value)
@@ -85,16 +86,13 @@ export function MultiplayerHost(props: { data: Room }) {
 				}
 
 				case "gamestate": {
-					if (data.data === "start") {
-						start.value = true
-					} else if (data.data === "end") {
-						start.value = false
-					}
+					if (data.data === "playing") start.value = true
+					break
 				}
 			}
 		}
 
-		setInterval(() => ws.current?.send(JSON.stringify({ type: "ping" })), 5000)
+		setInterval(() => ws.current?.send(JSON.stringify({ type: "ping" })), 30000)
 	}, [])
 
 	return (
@@ -106,7 +104,7 @@ export function MultiplayerHost(props: { data: Room }) {
 					<span class="text-xl text-black">Scan để chơi!</span>
 				</div>
 			)}
-			<h1 class="text-6xl">Quiz Toán</h1>
+			<h1 class="text-6xl mt-20">Quiz Toán</h1>
 			<ul class="max-w-screen-lg w-full flex flex-col gap-3 text-black">
 				{[...players.value.entries()].map(([_, player], i) => (
 					<li key={i} class={cn(
@@ -115,29 +113,21 @@ export function MultiplayerHost(props: { data: Room }) {
 					)}>
 						<span class="w-1/5">{player.name}</span>
 						<div class="w-full flex-1 grid grid-cols-10 gap-1">
-							{player.status.map((status, i) => (
+							{player.answers.map((ans, i) => (
 								<div key={i} class={cn(
 									"w-full flex-1 rounded-full h-2 transition-all",
-									status === 1 ? "bg-green-500" : status === -1 ? "bg-red-500" : "border-gray-500 border",
+									ans === null ? "border-gray-500 border" : ans === questions[i]?.answer ? "bg-green-500" : "bg-red-500",
 								)} />
 							))}
 						</div>
 						<span class="w-1/12">{player.score}</span>
 					</li>
 				))}
-				{Array(8 - players.value.size).fill(0).map((_, i) => (
-					<li class="w-full bg-gray-200 rounded-xl flex gap-6 items-center flex-1 px-6 py-4 text-3xl opacity-25" key={i}>
-						<span class="w-1/5">Người chơi {i + players.value.size + 1}</span>
-						<div class="w-full flex-1 grid grid-cols-10 gap-1">
-							{Array(questions.length).fill(0).map((_, i) => (
-								<div key={i} class="w-full flex-1 rounded-full h-2 transition-all border-gray-500 border" />
-							))}
-						</div>
-						<span class="w-1/12">
-							0
-						</span>
+				{players.value.size < 1 && (
+					<li class="w-full bg-gray-200 rounded-xl flex gap-6 items-center flex-1 px-6 py-4 text-3xl">
+						Chưa có người chơi nào
 					</li>
-				))}
+				)}
 			</ul>
 			<div className="flex gap-3">
 				<button
@@ -152,8 +142,8 @@ export function MultiplayerHost(props: { data: Room }) {
 							if (!a) return
 							current.send(JSON.stringify({ type: "end" }))
 							start.value = false
-							players.value.clear()
 						} else {
+							console.log(questions)
 							current.send(JSON.stringify({ type: "start", data: { questions } }))
 							start.value = true
 						}
@@ -171,6 +161,7 @@ export function MultiplayerHost(props: { data: Room }) {
 						if (!a) return
 						current.send(JSON.stringify({ type: "reset" }))
 						start.value = false
+						location.reload()
 					}}
 				>
 					Đặt lại phòng
