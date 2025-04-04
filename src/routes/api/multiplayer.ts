@@ -1,4 +1,5 @@
 import { Handler } from "$fresh/server.ts"
+import { data } from "npm:autoprefixer@10.4.17"
 
 const channel = new BroadcastChannel("game")
 
@@ -29,30 +30,25 @@ export const handler: Handler = async (req, ctx) => {
 	const { response, socket } = Deno.upgradeWebSocket(req)
 	const kv = await Deno.openKv()
 
-	const name = ctx.url.searchParams.get("name")
 	const id = ctx.url.searchParams.get("id")
-	if (!id || !name) {
-		console.log("Missing name or id")
-		socket.close(4000, "Missing name or id")
+	if (!id) {
+		console.log("Missing id")
+		socket.close(4000, "Missing id")
 		return response
 	}
 
 	socket.onopen = async () => {
-		console.log("WebSocket connection opened for", name, id)
+		console.log("WebSocket connection opened for", id)
 		clients.set(id, socket)
-		const playerData = (await kv.get<Player>(["players", id])).value ?? { id, name, status: Array(10).fill(0), score: 0 } as Player
-		playerData.name = name
-
-		await kv.set(["players", id], playerData)
 
 		if (id !== "host") {
-			if (clients.get("host")) relayToHost({ type: "join", ...playerData })
-			else channel.postMessage(JSON.stringify({ type: "join", ...playerData }))
+			const player = await kv.get<Player>(["players", id])
+			socket.send(JSON.stringify({ type: "welcome", data: { id, status: Array(10).fill(0), score: 0, ...player.value } }))
 		} else {
 			const players = kv.list<Player>({ prefix: ["players"] })
 			for await (const player of players) {
 				if (player.value.id !== id) {
-					socket.send(JSON.stringify({ type: "join", ...player.value }))
+					socket.send(JSON.stringify({ type: "join", data: { ...player.value } }))
 				}
 			}
 		}
@@ -63,13 +59,41 @@ export const handler: Handler = async (req, ctx) => {
 		// }
 	}
 
-	socket.onmessage = event => {
+	socket.onmessage = async event => {
 		const data = JSON.parse(event.data)
+
 		if (data.type === "ping") socket.send(JSON.stringify({ type: "pong" }))
 		else if (id !== "host") {
+			switch (data.type) {
+				case "join": {
+					clients.set(data.data.id, socket)
+					const playerData = { id: data.data.id, name: data.data.name.trim(), status: Array(10).fill(0), score: 0 }
+					await kv.set(["players", data.data.id], playerData)
+					relayToHost({ type: "join", data: playerData })
+					return
+				}
+
+				case "quit": {
+					clients.delete(data.data.id)
+					await kv.delete(["players", data.data.id])
+					relayToHost({ type: "quit", data: { id: data.data.id } })
+					return
+				}
+			}
+
 			channel.postMessage(JSON.stringify(data))
 			relayToHost(data)
 		} else {
+			switch (data.type) {
+				case "end":
+				case "reset": {
+					gameState = "idle"
+					for await (const entry of kv.list({ prefix: ["players"] })) await kv.delete(entry.key)
+					await kv.delete(["room"])
+					break
+				}
+			}
+
 			channel.postMessage(JSON.stringify(data))
 			broadcastToClients(data) // Send to all clients in this isolate except host
 			console.log("Relayed to all clients:", data)
@@ -86,20 +110,16 @@ export const handler: Handler = async (req, ctx) => {
 	}
 
 	socket.onclose = async () => {
-		console.log("WebSocket connection closed for", name, id)
+		console.log("WebSocket connection closed for", id)
 		clients.delete(id)
-		await kv.delete(["players", id])
-
-		channel.postMessage(JSON.stringify({ type: "leave", name, id }))
-		if (id !== "host") relayToHost({ type: "leave", name, id })
+		if (id !== "host") relayToHost({ type: "leave", data: { id } })
 	}
 
 	socket.onerror = async error => {
 		console.error("WebSocket error:", error)
 		socket.close(4001, "WebSocket error")
-		channel.postMessage(JSON.stringify({ type: "leave", name, id }))
+		channel.postMessage(JSON.stringify({ type: "leave", data: { id } }))
 		clients.delete(id)
-		await kv.delete(["players", id])
 	}
 
 	return response

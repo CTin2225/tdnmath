@@ -5,7 +5,6 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
-import * as $api_mp from "./routes/api/mp.ts";
 import * as $api_multiplayer from "./routes/api/multiplayer.ts";
 import * as $api_resetDbDangerous from "./routes/api/resetDbDangerous.ts";
 import * as $api_resetScoresDangerous from "./routes/api/resetScoresDangerous.ts";
@@ -28,7 +27,6 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
-    "./routes/api/mp.ts": $api_mp,
     "./routes/api/multiplayer.ts": $api_multiplayer,
     "./routes/api/resetDbDangerous.ts": $api_resetDbDangerous,
     "./routes/api/resetScoresDangerous.ts": $api_resetScoresDangerous,

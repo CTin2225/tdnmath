@@ -93,6 +93,15 @@ export function MultiplayerClient() {
 		answers.value[qi] = answer.value
 		answers.value = [...answers.value]
 
+		ws.current?.send(JSON.stringify({
+			type: "answer",
+			data: {
+				id: playerid.value,
+				status: answers.value.map((c, i) => c === null ? 0 : isCorrect(i, c) ? 1 : -1),
+				score: score.value,
+			},
+		}))
+
 		timeout.current = setTimeout(() => {
 			currentQuestion.value = Math.min(qi + 1, questions.length)
 			answer.value = null
@@ -101,7 +110,7 @@ export function MultiplayerClient() {
 	}
 
 	useEffect(() => {
-		while (!playername.value) playername.value = prompt("Nhập tên của bạn")
+		// while (!playername.value) playername.value = prompt("Nhập tên của bạn")
 
 		playerid.value = localStorage.getItem("playerID") ?? genId()
 		localStorage.setItem("playerID", playerid.value)
@@ -125,12 +134,24 @@ export function MultiplayerClient() {
 
 		ws.current.onmessage = event => {
 			const data = JSON.parse(event.data)
-			if (data.type === "start") {
-				questionsList.value = data.data.questions
-				answer.value = null
-				answers.value = Array(questionsList.value.length).fill(null)
-				showAnswer.value = false
-				currentQuestion.value = 0
+
+			switch (data.type) {
+				case "welcome": {
+					if (data.data.name) playername.value = data.data.name
+					else {
+						while (!playername.value) playername.value = prompt("Nhập tên của bạn")
+					}
+					ws.current?.send(JSON.stringify({ type: "join", data: { id: playerid.value, name: playername.value } }))
+					break
+				}
+
+				case "start": {
+					questionsList.value = data.data.questions
+					answer.value = null
+					answers.value = Array(questionsList.value.length).fill(null)
+					showAnswer.value = false
+					currentQuestion.value = 0
+				}
 			}
 		}
 
@@ -188,7 +209,22 @@ export function MultiplayerClient() {
 					)} />
 				))}
 			</div>
-
+			{questions.length === 0 && (
+				// wait message and leave button
+				<div class="flex flex-col gap-4 items-center justify-center w-full">
+					<span class="text-2xl font-bold">Chờ game bắt đầu bạn nhé!</span>
+					<button
+						type="button"
+						class="px-4 py-2 transition-all hover:translate-y-1 hover:shadow-none rounded-lg shadow-[0_4px_0_0] focus:ring-1 ring-black outline-none bg-red-500 shadow-red-600 text-white text-2xl disabled:opacity-25"
+						onClick={() => {
+							ws.current?.send(JSON.stringify({ type: "quit", data: { id: playerid.value } }))
+							location.href = "/"
+						}}
+					>
+						Rời khỏi phòng
+					</button>
+				</div>
+			)}
 			{currentQuestion.value < questions.length
 				? (
 					<>
