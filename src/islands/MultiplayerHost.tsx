@@ -143,7 +143,6 @@ export function MultiplayerHost(props: { data: Room }) {
 							current.send(JSON.stringify({ type: "end" }))
 							start.value = false
 						} else {
-							console.log(questions)
 							current.send(JSON.stringify({ type: "start", data: { questions } }))
 							start.value = true
 						}

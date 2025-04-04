@@ -141,6 +141,8 @@ function relayToHost(data: Record<string, object | string | number>) {
 			socket.send(JSON.stringify(data))
 			console.log("Relayed to host:", data)
 		}
+	} else {
+		broadcastToChannel(data)
 	}
 }
 
