@@ -1,3 +1,5 @@
+import { pickRandom } from "../../utils.ts";
+import questions from "../../static/questions.json" with { type: "json" }
 import { Handler } from "$fresh/server.ts"
 import { Room } from "../../types.ts"
 
@@ -92,14 +94,15 @@ export const handler: Handler = async (req, ctx) => {
 				}
 			}
 		} else {
-			broadcastToChannel(data)
-			broadcastToClients(data)
-
 			switch (data.type) {
 				case "end":
 				case "reset": {
-					for await (const entry of kv.list({ prefix: ["players"] })) await kv.delete(entry.key)
+					broadcastToChannel(data)
+					broadcastToClients(data)
+
 					await kv.delete(["room"])
+					for await (const entry of kv.list({ prefix: ["players"] })) await kv.delete(entry.key)
+
 					for (const [clientId, clientSocket] of clients) {
 						if (clientId !== "host") {
 							clientSocket.close(4000, "Game ended")
@@ -111,8 +114,11 @@ export const handler: Handler = async (req, ctx) => {
 
 				case "start": {
 					const room = await kv.get<Room>(["room"])
-					console.log(room.value)
-					await kv.set(["room"], { ...room.value, status: "playing" })
+					const roomData = { questions: pickRandom(questions, 10), ...room.value, status: "playing" }
+					await kv.set(["room"], roomData)
+					relayToHost({ type: "start", data: roomData })
+					broadcastToChannel({ type: "start", data: roomData })
+					broadcastToClients({ type: "start", data: roomData })
 					break
 				}
 			}

@@ -1,11 +1,11 @@
 import { useSignal } from "@preact/signals"
 import { useEffect, useRef } from "preact/hooks"
 import { qrcode } from "qrcode"
-import { Room } from "../types.ts"
+import { Question } from "../types.ts"
 import { cn } from "../utils.ts"
 
-export function MultiplayerHost(props: { data: Room }) {
-	const { status, questions } = props.data
+export function MultiplayerHost() {
+	const questions = useSignal<Question[] | null>(null)
 	const ws = useRef<WebSocket | null>(null)
 	const players = useSignal<Map<string, { name: string; answers: (string | number | null)[]; score: number; connected: boolean }>>(
 		new Map(),
@@ -75,6 +75,12 @@ export function MultiplayerHost(props: { data: Room }) {
 					break
 				}
 
+				case "start": {
+					questions.value = data.data.questions
+					start.value = true
+					break
+				}
+
 				case "answer": {
 					const player = players.value.get(data.data.id)
 					if (!player) return
@@ -116,7 +122,7 @@ export function MultiplayerHost(props: { data: Room }) {
 							{player.answers.map((ans, i) => (
 								<div key={i} class={cn(
 									"w-full flex-1 rounded-full h-2 transition-all",
-									ans === null ? "border-gray-500 border" : ans === questions[i]?.answer ? "bg-green-500" : "bg-red-500",
+									ans === null ? "border-gray-500 border" : ans === questions.value?.[i]?.answer ? "bg-green-500" : "bg-red-500",
 								)} />
 							))}
 						</div>
@@ -143,7 +149,7 @@ export function MultiplayerHost(props: { data: Room }) {
 							current.send(JSON.stringify({ type: "end" }))
 							start.value = false
 						} else {
-							current.send(JSON.stringify({ type: "start", data: { questions } }))
+							current.send(JSON.stringify({ type: "start" }))
 							start.value = true
 						}
 					}}
