@@ -21,7 +21,7 @@ export function MultiplayerHost(props: { data: Room }) {
 	}, [])
 
 	useEffect(() => {
-		const wsUrl = `ws://${location.host}/api/multiplayer?name=host&id=host`
+		const wsUrl = `${location.origin.replace("http", "ws")}/api/multiplayer?name=host&id=host`
 		ws.current = new WebSocket(wsUrl)
 
 		ws.current.onopen = () => {

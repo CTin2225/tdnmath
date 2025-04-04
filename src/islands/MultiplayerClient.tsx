@@ -106,7 +106,7 @@ export function MultiplayerClient() {
 		playerid.value = localStorage.getItem("playerID") ?? genId()
 		localStorage.setItem("playerID", playerid.value)
 
-		const wsUrl = `ws://${location.host}/api/multiplayer?name=${playername.value}&id=${playerid.value}`
+		const wsUrl = `${location.origin.replace("http", "ws")}/api/multiplayer?name=${playername.value}&id=${playerid.value}`
 		ws.current = new WebSocket(wsUrl)
 
 		ws.current.onopen = () => {
