@@ -1,11 +1,13 @@
 import { Handler } from "$fresh/server.ts"
 
 const channel = new BroadcastChannel("game")
+
 channel.onmessage = event => {
 	const message = event.data
 	try {
 		const data = JSON.parse(message)
 		console.log("Received from BroadcastChannel:", data)
+		if (data.type === "join" && data.id === "host") return
 		relayToHost(data)
 	} catch (e) {
 		console.error("Failed to parse BroadcastChannel message:", e)
@@ -43,9 +45,10 @@ export const handler: Handler = async (req, ctx) => {
 
 		await kv.set(["players", id], playerData)
 
-		channel.postMessage(JSON.stringify({ type: "join", ...playerData }))
-		if (id !== "host") relayToHost({ type: "join", ...playerData })
-		else {
+		if (id !== "host") {
+			if (clients.get("host")) relayToHost({ type: "join", ...playerData })
+			else channel.postMessage(JSON.stringify({ type: "join", ...playerData }))
+		} else {
 			const players = kv.list<Player>({ prefix: ["players"] })
 			for await (const player of players) {
 				if (player.value.id !== id) {
@@ -97,17 +100,6 @@ export const handler: Handler = async (req, ctx) => {
 		channel.postMessage(JSON.stringify({ type: "leave", name, id }))
 		clients.delete(id)
 		await kv.delete(["players", id])
-	}
-
-	channel.onmessage = event => {
-		const message = event.data
-		try {
-			const data = JSON.parse(message)
-			console.log("Received from BroadcastChannel:", data)
-			relayToHost(data)
-		} catch (e) {
-			console.error("Failed to parse BroadcastChannel message:", e)
-		}
 	}
 
 	return response
