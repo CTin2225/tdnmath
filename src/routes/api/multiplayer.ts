@@ -1,5 +1,4 @@
 import { Handler } from "$fresh/server.ts"
-import { data } from "npm:autoprefixer@10.4.17"
 
 const channel = new BroadcastChannel("game")
 
@@ -10,14 +9,15 @@ channel.onmessage = event => {
 		console.log("Received from BroadcastChannel:", data)
 		if (data.type === "join" && data.id === "host") return
 		relayToHost(data)
+		broadcastToClients(data)
 	} catch (e) {
 		console.error("Failed to parse BroadcastChannel message:", e)
 	}
 }
 
 const clients = new Map<string, WebSocket>()
-let gameState: "idle" | "running" = "idle" // Track game state
-let currentQuestion: { question: string; options: string[] } | null = null // Track current question
+// let gameState: "idle" | "running" = "idle" // Track game state
+// let currentQuestion: { question: string; options: string[] } | null = null // Track current question
 
 type Player = {
 	id: string
@@ -69,33 +69,31 @@ export const handler: Handler = async (req, ctx) => {
 					clients.set(data.data.id, socket)
 					const playerData = { id: data.data.id, name: data.data.name.trim(), status: Array(10).fill(0), score: 0 }
 					await kv.set(["players", data.data.id], playerData)
-					relayToHost({ type: "join", data: playerData })
+					findHostAndSend({ type: "join", data: playerData })
 					return
 				}
 
 				case "quit": {
 					clients.delete(data.data.id)
 					await kv.delete(["players", data.data.id])
-					relayToHost({ type: "quit", data: { id: data.data.id } })
+					findHostAndSend({ type: "quit", data: { id: data.data.id } })
 					return
 				}
 			}
 
-			channel.postMessage(JSON.stringify(data))
-			relayToHost(data)
+			findHostAndSend(data)
 		} else {
 			switch (data.type) {
 				case "end":
 				case "reset": {
-					gameState = "idle"
+					// gameState = "idle"
 					for await (const entry of kv.list({ prefix: ["players"] })) await kv.delete(entry.key)
 					await kv.delete(["room"])
 					break
 				}
 			}
 
-			channel.postMessage(JSON.stringify(data))
-			broadcastToClients(data) // Send to all clients in this isolate except host
+			broadcastToChannel(data)
 			console.log("Relayed to all clients:", data)
 
 			// handle game states
@@ -109,13 +107,13 @@ export const handler: Handler = async (req, ctx) => {
 		}
 	}
 
-	socket.onclose = async () => {
+	socket.onclose = () => {
 		console.log("WebSocket connection closed for", id)
 		clients.delete(id)
-		if (id !== "host") relayToHost({ type: "leave", data: { id } })
+		if (id !== "host") findHostAndSend({ type: "leave", data: { id } })
 	}
 
-	socket.onerror = async error => {
+	socket.onerror = error => {
 		console.error("WebSocket error:", error)
 		socket.close(4001, "WebSocket error")
 		channel.postMessage(JSON.stringify({ type: "leave", data: { id } }))
@@ -125,6 +123,11 @@ export const handler: Handler = async (req, ctx) => {
 	return response
 }
 
+function findHostAndSend(data: object) {
+	relayToHost(data)
+	broadcastToChannel(data)
+}
+
 function relayToHost(data: object) {
 	if (clients.has("host")) {
 		const socket = clients.get("host")!
@@ -132,10 +135,12 @@ function relayToHost(data: object) {
 			socket.send(JSON.stringify(data))
 			console.log("Relayed to host:", data)
 		}
-	} else {
-		channel.postMessage(JSON.stringify(data))
-		console.log("Relayed to all other isolates:", data)
 	}
+}
+
+function broadcastToChannel(data: object) {
+	channel.postMessage(JSON.stringify(data))
+	console.log("Relayed to other isolates:", data)
 }
 
 function broadcastToClients(data: object) {
