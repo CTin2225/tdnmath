@@ -7,3 +7,8 @@ export type Question = {
 	explanation: string | null
 	id: number
 }
+
+export type Room = {
+	status: "waiting" | "playing" | "finished"
+	questions: Question[]
+}

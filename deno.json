@@ -4,7 +4,7 @@
 		"check": "deno lint && deno check **/*.ts*",
 		"cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
 		"manifest": "deno task cli manifest $(pwd)",
-		"start": "deno run --unstable-kv -A --watch=src/static/,src/routes/ src/dev.ts",
+		"start": "deno run --unstable-broadcast-channel --unstable-kv -A --watch=src/static/,src/routes/ src/dev.ts",
 		"build": "deno run --unstable-kv -A src/dev.ts build",
 		"preview": "deno run --unstable-kv -A src/main.ts",
 		"update": "deno run --unstable-kv -A -r https://fresh.deno.dev/update ."
@@ -27,6 +27,7 @@
 		"preact/": "https://esm.sh/preact@10.22.0/",
 		"@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
 		"@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
+		"qrcode": "https://deno.land/x/qrcode@v2.0.0/mod.ts",
 		"tailwindcss": "npm:tailwindcss@3.4.1",
 		"tailwindcss/": "npm:/tailwindcss@3.4.1/",
 		"tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
