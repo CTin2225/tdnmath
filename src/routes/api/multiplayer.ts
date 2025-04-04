@@ -92,6 +92,9 @@ export const handler: Handler = async (req, ctx) => {
 				}
 			}
 		} else {
+			broadcastToChannel(data)
+			broadcastToClients(data)
+
 			switch (data.type) {
 				case "end":
 				case "reset": {
@@ -114,8 +117,6 @@ export const handler: Handler = async (req, ctx) => {
 				}
 			}
 
-			broadcastToChannel(data)
-			broadcastToClients(data)
 			console.log("Relayed to all clients:", data.type === "start" ? "[questions]" : data)
 		}
 	}

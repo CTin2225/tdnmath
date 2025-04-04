@@ -166,7 +166,11 @@ export function MultiplayerClient() {
 					break
 				}
 
-				case "end":
+				case "end": {
+					currentQuestion.value = questionsList.value.length
+					break
+				}
+
 				case "reset": {
 					location.href = "/"
 					break
