@@ -9,16 +9,14 @@ channel.onmessage = event => {
 		const data = JSON.parse(message)
 		console.log("Received from BroadcastChannel:", data)
 		if (data.type === "join" && data.id === "host") return
-		relayToHost(data)
-		broadcastToClients(data)
+		relayToHost({ ...data, thruchannel: true })
+		broadcastToClients({ ...data, thruchannel: true })
 	} catch (e) {
 		console.error("Failed to parse BroadcastChannel message:", e)
 	}
 }
 
 const clients = new Map<string, WebSocket>()
-// let gameState: "idle" | "running" = "idle" // Track game state
-// let currentQuestion: { question: string; options: string[] } | null = null // Track current question
 
 type Player = {
 	id: string
