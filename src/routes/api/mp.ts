@@ -7,6 +7,7 @@ channel.onmessage = event => {
 	try {
 		const data = JSON.parse(message)
 		console.log("Received from BroadcastChannel:", data)
+		if (data.type === "join" && data.id === "host") return
 		relayToHost(data)
 	} catch (e) {
 		console.error("Failed to parse BroadcastChannel message:", e)
