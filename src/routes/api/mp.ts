@@ -1,14 +1,19 @@
 import { Handler } from "$fresh/server.ts"
 
-const channel = new BroadcastChannel("game")
-channel.onmessage = event => {
-	const message = event.data
-	try {
-		const data = JSON.parse(message)
-		console.log("Received from BroadcastChannel:", data)
-		relayToHost(data)
-	} catch (e) {
-		console.error("Failed to parse BroadcastChannel message:", e)
+let channel: BroadcastChannel
+
+if (!Deno.args.includes("build")) {
+	channel = new BroadcastChannel("game")
+
+	channel.onmessage = event => {
+		const message = event.data
+		try {
+			const data = JSON.parse(message)
+			console.log("Received from BroadcastChannel:", data)
+			relayToHost(data)
+		} catch (e) {
+			console.error("Failed to parse BroadcastChannel message:", e)
+		}
 	}
 }
 
