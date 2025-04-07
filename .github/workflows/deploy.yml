@@ -29,8 +29,8 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "tdnmathgame"
-          entrypoint: "src/main.ts"
+          project: "tdnmathhub"
+          entrypoint: "main.ts"
           root: "."
           
           
