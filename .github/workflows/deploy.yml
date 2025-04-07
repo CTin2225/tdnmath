@@ -4,7 +4,6 @@ on:
     branches: math
   pull_request:
     branches: math
-  workflow_dispatch:
 
 jobs:
   deploy:
@@ -30,7 +29,7 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "mathgame"
+          project: "tdnmathgame"
           entrypoint: "src/main.ts"
           root: "."
           
