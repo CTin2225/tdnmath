@@ -14,11 +14,11 @@ const Screen = ({ screenArray }: { screenArray: Array<Row> }) => {
                 {screenArray.map((items: Row, index1: number) => (
                     <div
                         key={index1}
-                        className="grid grid-cols-9 px-4 gap-[8px]">
+                        className="grid grid-cols-7 px-4 gap-[8px]">
                         {items.left.map((item, index2) => (
                             <div
                                 key={index2}
-                                className={`border h-[40px] flex justify-center items-center ${
+                                className={`border h-[50px] flex justify-center items-center ${
                                     colorState[item.state]
                                 }`}>
                                 {item.text}
@@ -30,7 +30,7 @@ const Screen = ({ screenArray }: { screenArray: Array<Row> }) => {
                         {items.right.map((item, index2) => (
                             <div
                                 key={index2}
-                                className={`border h-[40px] flex justify-center items-center ${
+                                className={`border h-[50px] flex justify-center items-center ${
                                     colorState[item.state]
                                 }`}>
                                 {item.text}

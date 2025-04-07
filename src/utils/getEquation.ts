@@ -7,12 +7,12 @@ const pickArray = <T>(arr: T[]): T =>
     arr[randRange(arr.length * 10) % arr.length];
 
 const getEquation = () => {
-    let firstNum = randRange(0, 10 ** ((randRange(0, 12) % 3) + 1) - 1);
+    let firstNum = randRange(0, 10 ** ((randRange(0, 12) % 2) + 1) - 1);
     let secondNum = Math.min(
-        999 - firstNum,
+        99 - firstNum,
         randRange(
-            10 ** (4 - firstNum.toString().length) - 2,
-            10 ** (4 - firstNum.toString().length) - 1
+            10 ** (3 - firstNum.toString().length) - 2,
+            10 ** (3 - firstNum.toString().length) - 1
         )
     );
     const operator = pickArray(["+", "-"] as const);
@@ -27,7 +27,7 @@ const getEquation = () => {
             : firstNum + secondNum
     )
         .toString()
-        .padStart(3, "0");
+        .padStart(2, "0");
 
     return { left, right };
 };

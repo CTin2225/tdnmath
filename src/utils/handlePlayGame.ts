@@ -5,7 +5,7 @@ import { buttonNames } from "@/constants";
 const mexp = new Mexp();
 
 const genColors = (answer: string, response: string) => {
-    const output: number[] = Array(8).fill(1);
+    const output: number[] = Array(6).fill(1);
     const chars = response.split("").map((e, i) => [e, i] as const);
 
     for (const [, i] of chars.filter(([c, i]) => answer[i] === c)) {
@@ -46,8 +46,8 @@ const handlePlayGame = (
                 window.location.reload();
                 break;
             case "D":
-                if (columnIndex > 5) {
-                    updatedScreenArray[rowIndex].right[columnIndex - 6].text =
+                if (columnIndex > 4) {
+                    updatedScreenArray[rowIndex].right[columnIndex - 5].text =
                         "";
                 } else
                     updatedScreenArray[rowIndex].left[columnIndex - 1].text =
@@ -55,7 +55,7 @@ const handlePlayGame = (
                 setColumnIndex(columnIndex - 1);
                 break;
             case "=":
-                if (columnIndex > 7) {
+                if (columnIndex > 5) {
                     const leftEquation = updatedScreenArray[rowIndex].left
                         .map((item) => item.text)
                         .join("");
@@ -68,6 +68,7 @@ const handlePlayGame = (
                         [mexp.tokens[39], mexp.tokens[40]],
                         { "+": 23, "-": 47 }
                     );
+
                     if (
                         resultLeftEquation !== Number(rightEquation) ||
                         (!leftEquation.includes("+") &&
@@ -83,9 +84,11 @@ const handlePlayGame = (
 
                     const rowResult = genColors(stringExpected, stringOutput);
 
+                    console.log(rowResult)
+
                     for (let i = 0; i < rowResult.length; i++) {
-                        if (i >= 5)
-                            updatedScreenArray[rowIndex].right[i - 5].state =
+                        if (i >= 4)
+                            updatedScreenArray[rowIndex].right[i - 4].state =
                                 rowResult[i] as 0 | 1 | 2 | 3;
                         else
                             updatedScreenArray[rowIndex].left[i].state =
@@ -112,8 +115,8 @@ const handlePlayGame = (
                 }
                 break;
             default:
-                if (columnIndex >= 5) {
-                    updatedScreenArray[rowIndex].right[columnIndex - 5].text =
+                if (columnIndex >= 4) {
+                    updatedScreenArray[rowIndex].right[columnIndex - 4].text =
                         input as string;
                 } else
                     updatedScreenArray[rowIndex].left[columnIndex].text =
@@ -121,6 +124,7 @@ const handlePlayGame = (
                 setColumnIndex(columnIndex + 1);
         }
     } catch (error) {
+        console.log(error)
         alert("Không thể nhập");
     }
     setScreenArray(updatedScreenArray);

@@ -26,7 +26,7 @@ const KeyBoard = ({
     setDisabled: React.Dispatch<React.SetStateAction<string[]>>;
 }) => {
     useEffect(() => {
-        if (columnIndex <= 7) {
+        if (columnIndex <= 5) {
             setDisabled((prevState) => [...prevState, "="]);
         } else {
             setDisabled((prevState) =>

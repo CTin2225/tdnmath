@@ -26,16 +26,8 @@ const initialState: Array<Row> = [
                 text: "",
                 state: 0,
             },
-            {
-                text: "",
-                state: 0,
-            },
         ],
         right: [
-            {
-                text: "",
-                state: 0,
-            },
             {
                 text: "",
                 state: 0,
@@ -64,16 +56,8 @@ const initialState: Array<Row> = [
                 text: "",
                 state: 0,
             },
-            {
-                text: "",
-                state: 0,
-            },
         ],
         right: [
-            {
-                text: "",
-                state: 0,
-            },
             {
                 text: "",
                 state: 0,
@@ -102,16 +86,8 @@ const initialState: Array<Row> = [
                 text: "",
                 state: 0,
             },
-            {
-                text: "",
-                state: 0,
-            },
         ],
         right: [
-            {
-                text: "",
-                state: 0,
-            },
             {
                 text: "",
                 state: 0,
@@ -140,16 +116,8 @@ const initialState: Array<Row> = [
                 text: "",
                 state: 0,
             },
-            {
-                text: "",
-                state: 0,
-            },
         ],
         right: [
-            {
-                text: "",
-                state: 0,
-            },
             {
                 text: "",
                 state: 0,
@@ -178,16 +146,8 @@ const initialState: Array<Row> = [
                 text: "",
                 state: 0,
             },
-            {
-                text: "",
-                state: 0,
-            },
         ],
         right: [
-            {
-                text: "",
-                state: 0,
-            },
             {
                 text: "",
                 state: 0,
