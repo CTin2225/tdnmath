@@ -142,7 +142,7 @@ export default function Home() {
               name="Quiz Game"
               description="Những câu hỏi toán học vui nhộn"
               image="quiz.png"
-              href="https://mathgame.deno.dev"
+              href="https://tdnmathgame.deno.dev"
             >
               <strong>Cơ chế chung</strong>
               <ul class="list-disc pl-4">
