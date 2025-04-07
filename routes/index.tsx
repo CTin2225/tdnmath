@@ -286,7 +286,7 @@ export default function Home() {
               name="Thử thách MATHLE"
               description="Bạn có đoán được phương trình?"
               image="mathle.png"
-              href="https://mathle.vercel.app"
+              href="https://tdnmathle.deno.dev"
             >
               <strong>Cơ chế chung</strong>
               <ul class="list-disc pl-4">
