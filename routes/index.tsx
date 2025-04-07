@@ -188,113 +188,68 @@ export default function Home() {
               <p>Chúc bạn chơi vui và chinh phục bảng xếp hạng!</p>
             </GameCard>
             <GameCard
-              name="MATHLE"
-              description="Bạn có đoán được phương trình?"
-              image="mathle.png"
-              href="https://mathle.vercel.app"
+              name="2048"
+              description="Trò chơi ghép số chiến thuật"
+              image="2048.png"
+              href="https://play2048.co/classic"
             >
               <strong>Cơ chế chung</strong>
               <ul class="list-disc pl-4">
                 <li>
-                  Khi bắt đầu, một phương trình ngẫu nhiên sẽ được tạo ra.
+                  Trò chơi gồm một bảng với 16 ô vuông nhỏ
                 </li>
                 <li>
-                  Trò chơi gồm 8 ô vuông, mỗi ô là một số hoặc ký tự + hoặc -.
+                  Mỗi ô có thể là một số hoặc một ô trống.
                 </li>
                 <li>
-                  Bạn phải đoán đúng phương trình trong 5 lần thử, mỗi lần thử
-                  sẽ cho bạn biết số nào đúng và vị trí của nó.
+                  Bạn có thể di chuyển các ô theo 4 hướng: lên, xuống, trái,
+                  phải.
                 </li>
                 <li>
-                  Nếu ô nào có màu xanh lá, số đó đúng và ở đúng vị trí.
+                  Nếu 2 ô có cùng số, chúng sẽ ghép lại thành một ô mới với số
+                  lớn hơn.
                 </li>
                 <li>
-                  Nếu ô nào có màu vàng, số đó đúng nhưng ở sai vị trí.
+                  Mục tiêu là ghép các ô lại với nhau để tạo thành ô có số 2048.
                 </li>
                 <li>
-                  Nếu ô nào có màu xám, số đó không có trong phương trình
+                  Nếu không còn ô nào để di chuyển, bạn sẽ thua.
+                </li>
+                <li>
+                  Vì thời gian có hạn, bạn chỉ cần ghép tới số 128.
                 </li>
               </ul>
-              <strong>Chế độ Singleplayer</strong>
-              <ul class="list-disc pl-4">
-                <li>
-                  Thời gian chơi được ghi nhận sau khi hoàn thành ván chơi.
-                </li>
-                <li>
-                  Chơi lại để cải thiện thời gian và vượt qua người khác.
-                </li>
-              </ul>
-              <p>Chúc bạn chơi vui vẻ!</p>
+              <p>
+                Thời gian chơi sẽ được ghi nhận sau khi đạt được số 128. Chúc
+                bạn chơi vui vẻ!
+              </p>
             </GameCard>
             <GameCard
-              name="Killer Sudoku"
-              description="Biến thể thú vị của một trò chơi cổ điển"
-              image="sudoku.png"
-              href="https://sudoku.com/killer"
-            >
-              <strong>Cơ chế chung</strong>
-              <ul class="list-disc pl-4">
-                <li>
-                  Trò chơi gồm một bảng 9x9. Mỗi ô là một số từ 1 đến 9.
-                </li>
-                <li>
-                  Trong bảng có nhiều khung nhỏ gạch sọc ở trong, sao cho tổng
-                  số các số trong khung nhỏ đó bằng số nhỏ được ghi trên khung.
-                </li>
-                <li>
-                  Mỗi hàng, mỗi cột và mỗi ô vuông 3x3 đều có đủ các số từ 1 đến
-                  9 và không được trùng nhau.
-                </li>
-                <li>
-                  Một số số đã được điền sẵn vào bảng để bắt đầu.
-                </li>
-              </ul>
-              <strong>Chế độ Singleplayer</strong>
-              <ul class="list-disc pl-4">
-                <li>
-                  Thời gian chơi được ghi nhận sau khi hoàn thành ván chơi.
-                </li>
-                <li>
-                  Chơi lại để cải thiện thời gian và vượt qua người khác.
-                </li>
-              </ul>
-              <p>Chúc bạn chơi vui vẻ!</p>
-            </GameCard>
-            <GameCard
-              name="Minesweeper"
-              description="Trò chơi dò mìn hack não"
-              image="minesweeper.png"
-              href="https://cdn.zone.msn.com/assets/games/microsoftminesweeper/buildmsn/20240411T213845_releases_2024_04_v2.0.19_6f0b72a_msn/index.html"
+              name="Tangram"
+              description="Ghép hình theo mẫu"
+              image="tangram.png"
+              href="https://polypad.amplify.com/tangram"
             >
               <strong>Luật chơi</strong>
               <ul class="list-disc pl-4">
                 <li>
-                  Trò chơi gồm một bảng với nhiều ô vuông nhỏ
+                  Trò chơi gồm một bảng với nhiều miếng ghép hình
                 </li>
                 <li>
-                  Mỗi ô có thể là một ô trống, có số, hoặc có mìn
+                  Mỗi miếng ghép có hình dạng khác nhau, bạn có thể xoay và di
+                  chuyển chúng.
                 </li>
                 <li>
-                  Nếu bạn chọn một ô có mìn, bạn sẽ thua
+                  Bạn cần ghép các miếng lại với nhau để tạo thành một hình mẫu.
                 </li>
                 <li>
-                  Nếu bạn chọn một ô có số, ô đó sẽ hiện ra số mìn xung quanh nó
-                </li>
-                <li>
-                  Nếu bạn chọn một ô trống, ô đó sẽ đồng thời mở ra tất cả các ô
-                  trống xung quanh nó
+                  Hình mẫu có thể được chọn ở thanh bên dưới
                 </li>
               </ul>
-              <strong>Chế độ Singleplayer</strong>
-              <ul class="list-disc pl-4">
-                <li>
-                  Thời gian chơi được ghi nhận sau khi hoàn thành ván chơi.
-                </li>
-                <li>
-                  Chơi lại để cải thiện thời gian và vượt qua người khác.
-                </li>
-              </ul>
-              <p>Chúc bạn chơi vui vẻ!</p>
+              <p>
+                Thời gian chơi được ghi nhận sau khi hoàn thành một hình bất kỳ.
+                Chúc bạn chơi vui vẻ!
+              </p>
             </GameCard>
             <GameCard
               name="Nonogram"
@@ -322,16 +277,44 @@ export default function Home() {
                   Mục tiêu là tô màu đen các ô theo đúng quy tắc trên
                 </li>
               </ul>
-              <strong>Chế độ Singleplayer</strong>
+              <p>
+                Thời gian chơi được ghi nhận sau khi bảng được hoàn thành. Chúc
+                bạn chơi vui vẻ!
+              </p>
+            </GameCard>
+            <GameCard
+              name="Thử thách MATHLE"
+              description="Bạn có đoán được phương trình?"
+              image="mathle.png"
+              href="https://mathle.vercel.app"
+            >
+              <strong>Cơ chế chung</strong>
               <ul class="list-disc pl-4">
                 <li>
-                  Thời gian chơi được ghi nhận sau khi hoàn thành ván chơi.
+                  Khi bắt đầu, một phương trình ngẫu nhiên sẽ được tạo ra.
                 </li>
                 <li>
-                  Chơi lại để cải thiện thời gian và vượt qua người khác.
+                  Trò chơi gồm 6 ô vuông, mỗi ô là một số và có một ô là ký tự +
+                  hoặc -.
+                </li>
+                <li>
+                  Bạn phải đoán đúng phương trình trong 5 lần thử, mỗi lần thử
+                  sẽ cho bạn biết số nào đúng và vị trí của nó.
+                </li>
+                <li>
+                  Nếu ô nào có màu xanh lá, ký tự đó đúng và ở đúng vị trí.
+                </li>
+                <li>
+                  Nếu ô nào có màu vàng, ký tự đó đúng nhưng ở sai vị trí.
+                </li>
+                <li>
+                  Nếu ô nào có màu xám, ký tự đó không có trong phương trình
                 </li>
               </ul>
-              <p>Chúc bạn chơi vui vẻ!</p>
+              <p>
+                Thời gian chơi được ghi nhận sau khi hoàn thành ván chơi. Chúc
+                bạn chơi vui vẻ!
+              </p>
             </GameCard>
           </div>
         </div>
