@@ -1,9 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: main
+    branches: mathhub
   pull_request:
-    branches: main
+    branches: mathhub
 
 jobs:
   deploy:
@@ -29,7 +29,7 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "mathhubtest"
+          project: "tdnmathhub"
           entrypoint: "main.ts"
           root: "."
           
