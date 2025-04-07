@@ -1,9 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: math
+    branches: mathquiz
   pull_request:
-    branches: math
+    branches: mathquiz
 
 jobs:
   deploy:
@@ -30,7 +30,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "tdnmathgame"
-          entrypoint: "main.ts"
+          entrypoint: "src/main.ts"
           root: "."
           
           
