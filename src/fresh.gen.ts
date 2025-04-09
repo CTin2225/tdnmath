@@ -12,7 +12,7 @@ import * as $api_score from "./routes/api/score.ts";
 import * as $browser from "./routes/browser.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $leaderboard from "./routes/leaderboard.tsx";
-import * as $multiplayer_host from "./routes/multiplayer/host.tsx";
+import * as $multiplayer_hostd5d84d68812e from "./routes/multiplayer/hostd5d84d68812e.tsx";
 import * as $multiplayer_join from "./routes/multiplayer/join.tsx";
 import * as $singleplayer from "./routes/singleplayer.tsx";
 import * as $Browser from "./islands/Browser.tsx";
@@ -34,7 +34,7 @@ const manifest = {
     "./routes/browser.tsx": $browser,
     "./routes/index.tsx": $index,
     "./routes/leaderboard.tsx": $leaderboard,
-    "./routes/multiplayer/host.tsx": $multiplayer_host,
+    "./routes/multiplayer/hostd5d84d68812e.tsx": $multiplayer_hostd5d84d68812e,
     "./routes/multiplayer/join.tsx": $multiplayer_join,
     "./routes/singleplayer.tsx": $singleplayer,
   },

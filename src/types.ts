@@ -11,4 +11,5 @@ export type Question = {
 export type Room = {
 	status: "waiting" | "playing" | "finished"
 	questions: Question[]
+	players: string[]
 }

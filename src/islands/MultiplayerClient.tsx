@@ -155,6 +155,13 @@ export function MultiplayerClient() {
 					break
 				}
 
+				case "full": {
+					alert("Ôi không, phòng đã đầy rồi! Quay lại sau bạn nhé!")
+					ws.current?.send(JSON.stringify({ type: "quit", data: { id: playerid.value } }))
+					location.href = "/"
+					break
+				}
+
 				case "start": {
 					score.value = 0
 					questionsList.value = data.data.questions
@@ -235,7 +242,10 @@ export function MultiplayerClient() {
 			{questions.length === 0 && (
 				// wait message and leave button
 				<div class="flex flex-col gap-4 items-center justify-center w-full">
-					<span class="text-2xl font-bold">Chờ game bắt đầu bạn nhé!</span>
+					<span class="text-2xl font-bold text-center">
+						Chờ game bắt đầu bạn nhé! <br />
+						<span class="text-sm text-gray-400">Game đã bắt đầu mà bạn vẫn chưa vào được? Hãy thử refresh!</span>
+					</span>
 					<button
 						type="button"
 						class="px-4 py-2 transition-all hover:translate-y-1 hover:shadow-none rounded-lg shadow-[0_4px_0_0] focus:ring-1 ring-black outline-none bg-red-500 shadow-red-600 text-white text-2xl disabled:opacity-25"

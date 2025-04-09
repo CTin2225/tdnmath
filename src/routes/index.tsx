@@ -28,7 +28,7 @@ export default function Home() {
 						<Mode href="/singleplayer">
 							Chơi ngay
 						</Mode>
-						<Mode accent="#FF9800" href="/multiplayer">
+						<Mode accent="#FF9800" href="/leaderboard">
 							Bảng xếp hạng
 						</Mode>
 					</div>
@@ -37,14 +37,9 @@ export default function Home() {
 					<strong class="text-2xl">
 						Chơi theo nhóm
 					</strong>
-					<div className="flex w-full gap-4">
-						<Mode accent="#58A674" href="/multiplayer/host">
-							Tạo phòng
-						</Mode>
-						<Mode accent="#b48ead" href="/multiplayer/join">
-							Tham gia phòng
-						</Mode>
-					</div>
+					<Mode accent="#b48ead" href="/multiplayer/join">
+						Tham gia phòng chơi nhóm
+					</Mode>
 				</div>
 				<hr class="border border-gray-400/50 w-11/12" />
 				<Mode accent="#000" href="/browser">

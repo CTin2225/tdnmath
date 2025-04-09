@@ -92,7 +92,10 @@ export function MultiplayerHost() {
 				}
 
 				case "gamestate": {
-					if (data.data === "playing") start.value = true
+					if (data.data.status === "playing") {
+						start.value = true
+						questions.value = data.data.questions
+					}
 					break
 				}
 			}
@@ -112,9 +115,9 @@ export function MultiplayerHost() {
 			)}
 			<h1 class="text-6xl mt-20">Quiz Toán</h1>
 			<ul class="max-w-screen-lg w-full flex flex-col gap-3 text-black">
-				{[...players.value.entries()].map(([_, player], i) => (
-					<li key={i} class={cn(
-						"w-full bg-gray-200 rounded-xl flex gap-6 items-center flex-1 px-6 py-4 text-3xl",
+				{[...players.value.entries()].sort((a, b) => b[1].score - a[1].score).map(([id, player]) => (
+					<li key={id} class={cn(
+						"w-full bg-gray-200 rounded-xl flex gap-6 items-center flex-1 px-6 py-4 text-3xl transition-all",
 						!player.connected && "opacity-50",
 					)}>
 						<span class="w-1/5">{player.name}</span>

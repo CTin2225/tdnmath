@@ -54,7 +54,7 @@ export const handler: Handler = async (req, ctx) => {
 			}
 
 			const room = await kv.get<Room>(["room"])
-			socket.send(JSON.stringify({ type: "gamestate", data: room.value?.status }))
+			socket.send(JSON.stringify({ type: "gamestate", data: { ...room.value } }))
 		}
 	}
 
@@ -72,9 +72,14 @@ export const handler: Handler = async (req, ctx) => {
 					await kv.set(["players", data.data.id], playerData)
 
 					const room = await kv.get<Room>(["room"])
+					if (room.value?.players.length === 8) {
+						socket.send(JSON.stringify({ type: "full", data: { message: "Room is full" } }))
+						return
+					}
 
 					findHostAndSend({ type: "join", data: playerData })
 					socket.send(JSON.stringify({ type: "join", data: { ...playerData, ...room.value } }))
+					await kv.set(["room"], { ...room.value, players: [...(room.value?.players || []), data.data.id] })
 					return
 				}
 
@@ -89,6 +94,11 @@ export const handler: Handler = async (req, ctx) => {
 				case "quit": {
 					clients.delete(data.data.id)
 					await kv.delete(["players", data.data.id])
+					const room = await kv.get<Room>(["room"])
+					if (room.value) {
+						room.value.players = room.value.players.filter((playerId: string) => playerId !== data.data.id)
+						await kv.set(["room"], room.value)
+					}
 					findHostAndSend({ type: "quit", data: { id: data.data.id } })
 					return
 				}
