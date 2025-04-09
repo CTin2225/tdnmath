@@ -110,8 +110,6 @@ export function MultiplayerClient() {
 	}
 
 	useEffect(() => {
-		// while (!playername.value) playername.value = prompt("Nhập tên của bạn")
-
 		playerid.value = localStorage.getItem("playerID") ?? genId()
 		localStorage.setItem("playerID", playerid.value)
 
@@ -139,7 +137,18 @@ export function MultiplayerClient() {
 				case "welcome": {
 					if (data.data.name) playername.value = data.data.name
 					else {
-						while (!playername.value) playername.value = prompt("Nhập tên của bạn")
+						while (!playername.value) {
+							playername.value = prompt("Nhập tên của bạn")
+							if (playername.value === null) {
+								ws.current?.send(JSON.stringify({ type: "quit", data: { id: playerid.value } }))
+								location.href = "/"
+								return
+							} else if (playername.value.trim().length === 0) alert("Tên không được để trống!")
+							else if (playername.value.length > 16) {
+								alert("Tên quá dài! Tối đa 16 ký tự.")
+								playername.value = null
+							}
+						}
 					}
 					ws.current?.send(JSON.stringify({ type: "join", data: { id: playerid.value, name: playername.value } }))
 					break
@@ -220,7 +229,8 @@ export function MultiplayerClient() {
 
 	return (
 		<div class="flex flex-1 flex-col w-full gap-4">
-			<PlayerID class="absolute" />
+			<PlayerID class="fixed top-2 left-4" />
+			<span class="text-sm text-gray-600/60 fixed top-2 right-4">{playername.value}</span>
 			<div class="sticky top-4 z-10 flex gap-4 justify-center items-center bg-white/50 backdrop-blur border border-gray-300/60 rounded-xl px-2 py-1 w-max mx-auto shadow-lg">
 				<span>Điểm</span>
 				<span class="text-2xl font-bold">{score.value}</span>
