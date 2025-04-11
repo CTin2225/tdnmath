@@ -138,7 +138,7 @@ export default function Home() {
           <h1 class="font-medium text-balance">
             Chào bạn đến với Minigame Toán Học!
           </h1>
-          <div class="game-container p-6">
+          <div class="game-container grid grid-cols-1 lg:grid-cols-2">
             <GameCard
               name="Quiz Game"
               description="Những câu hỏi toán học vui nhộn"

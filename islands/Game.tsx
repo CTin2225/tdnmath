@@ -38,7 +38,7 @@ export default function GameCard(props: GameCardProps) {
     <>
       <button
         type="button"
-        class="bg-white rounded-xl shadow-md p-8 flex gap-4 justify-between hover:scale-110 ease-out transition-all relative items-center text-balance text-center text-blue-400"
+        class="max-w-full bg-white rounded-xl shadow-md p-8 flex flex-col lg:flex-row flex-wrap gap-4 justify-between hover:scale-110 ease-out transition-all items-center text-balance text-center text-blue-400"
         onClick={() => {
           showModal.value = true;
         }}
