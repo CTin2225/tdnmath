@@ -18,15 +18,6 @@
 		"choices": []
 	},
 	{
-		"difficulty": 2,
-		"question": "Cửa hàng có hai loại giỏ hoa quả: loại 1 mỗi giỏ có 4 quả táo, 8 quả lê, loại 2 mỗi giỏ có 7 quả táo, 14 quả lê. Cửa hàng có 25 quả táo, vậy cửa hàng có mấy quả lê?",
-		"image": null,
-		"answer": "50",
-		"explanation": "Trong mỗi giỏ số lê gấp đôi số táo vì vậy cửa hàng sẽ có $25 * 2 = 50$ quả lê",
-		"id": 7,
-		"choices": []
-	},
-	{
 		"difficulty": 3,
 		"question": "Điền tiếp vào dãy số: 7, 9, 13, 21, 37, ?",
 		"image": null,
@@ -38,20 +29,6 @@
 			"54",
 			"69",
 			"72"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Điền tiếp vào dãy số: 1, 3, 7, 13, 21, ?",
-		"image": null,
-		"answer": 0,
-		"explanation": "Quy luật:\n$1 + (2 * 1) = 3$\n$3 + (2 * 2) = 7$\n$7 + (2 * 3) = 13$\n$13 + (2 * 4) = 21$\nSuy ra, số cần tìm là $21 + (2 * 5) = 31$",
-		"id": 14,
-		"choices": [
-			"31",
-			"33",
-			"35",
-			"37"
 		]
 	},
 	{
@@ -84,7 +61,7 @@
 	},
 	{
 		"difficulty": 5,
-		"question": "Tìm mật khẩu cho 3 chữ số\nGợi ý:\n+ 682: có 1 số đúng và được đặt đúng chỗ\n+ 614: có 1 số đúng nhưng được đặt sai chỗ\n+ 206: có 2 số đúng nhưng được đặt sai chỗ\n+ 738: không số nào đúng\n+ 780: có 1 số đúng nhưng được đặt sai chỗ",
+		"question": "Tìm mật khẩu gồm 3 chữ số\nGợi ý:\n+ 682: có 1 chữ số đúng và được đặt đúng chỗ\n+ 614: có 1 chữ số đúng nhưng được đặt sai chỗ\n+ 206: có 2 chữ số đúng nhưng được đặt sai chỗ\n+ 738: không có chữ số nào đúng\n+ 780: có 1 chữ số đúng nhưng được đặt sai chỗ",
 		"image": null,
 		"answer": 0,
 		"explanation": "Đáp án là A. Vì:\n• số 682 có 1 số đúng và được dặt đúng chỗ, nhưng số 614 có 1 số đúng nhưng đặt sai chỗ, và số 6 giữ nguyên vị trí → loại số 6\n• số 780 có một số đúng nhưng sai vị trí, nhưng số 738 lại không có sỗ nào đúng → đáp án có số 0 nằm ở vị trí đầu tiên hoặc ở giữa\n• số 206 đã có số 6 bị loại → đáp án có số 0 và 2, đồng thời ta biết được số 0 cũng không ở giữa → 0 là số đầu tiên của mật mã\n• số 682 có một số đúng và được đặt đúng chỗ. Ta biết có số 2 trong mật mã → số 2 là số thứ 3\n• Ta biết mật khẩu còn thiếu số ở giữa, và số 614 có một số đúng nhưng được đặt sai vị trí. Ta đã loại được số 6, Nếu đáp án là số 1 thì không hợp lí, vì vị trí của nó đang ở giữa → số còn lại là số 4\nVậy, đáp án là 042",
@@ -112,7 +89,7 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Một thương nhân có 9 đồng tiền vàng giống nhau, nhưng có một đồng tiền giả nhẹ hơn nhưng đồng tiền thật. Sử dụng cân 2 đĩa để giúp ông ấy tìm ra những đồng tiền vàng giả với số lần cân ít nhất.",
+		"question": "Một thương nhân có 9 đồng tiền vàng giống nhau, nhưng có một đồng tiền giả nhẹ hơn những đồng tiền thật. Sử dụng cân 2 đĩa để giúp ông ấy tìm ra những đồng tiền vàng giả với số lần cân ít nhất.",
 		"image": null,
 		"answer": 0,
 		"explanation": "Lần cân thứ nhất: Bạn lấy 9 đồng vàng, chia làm 3 phần, mỗi phần 3 đồng vàng. Sau đó, đưa 2 phần bất kỳ lên bàn cân. Phần nào nhẹ hơn chứng tỏ có chứa tiền giả. Nếu cả 2 phần vàng đều có trọng lượng bằng nhau thì phần không cân là phần chứa đồng vàng giả.\nLần cân thứ hai: Trong lần cân đầu tiên, đã xác định được phần có chứa 1 đồng vàng giả. Tương tự như trên, ta cân 2 đồng vàng bất kỳ, nếu đồng vàng nào nhẹ hơn là đồng giả. Nếu 2 đồng cân đối, thì đồng còn lại không cân là giả.",
@@ -126,21 +103,7 @@
 	},
 	{
 		"difficulty": 2,
-		"question": "Con ốc sên phải leo lên đỉnh cột cao 10 mét. Mỗi ngày leo được 4m, nhưng đêm lại tuột 3m. Vì vậy, nếu nó bắt đầu vào sáng thứ Hai, khi nào một con ốc sên khác leo lên đỉnh?",
-		"image": null,
-		"answer": 0,
-		"explanation": "6 ngày đầu tiên ốc sên sẽ leo được 6m, đến ngày chủ nhật leo thêm được 4m, vậy chiều hôm chủ nhật ốc sẽ leo lên được tới đỉnh.",
-		"id": 24,
-		"choices": [
-			"chủ nhật",
-			"thứ bảy",
-			"thứ sáu",
-			"thứ năm"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Một cái cây cao 8m, người thợ mộc muốn xẻ cái cây này thành 5 khúc gỗ dài 16dm. Biết rằng mỗi lần người thợ mộc cưa một miếng gỗ mất 5 phút, sau đó nghỉ 3 phút để hồi phục sức lực. Hỏi người thợ mộc đốn một cái cây 8m trong bao nhiêu phút?",
+		"question": "Một cái cây cao 8m, một người thợ mộc muốn xẻ cái cây này thành 5 khúc gỗ dài 16dm. Biết rằng cứ mỗi lần người thợ mộc cưa một khúc gỗ mất 5 phút thì sau đó nghỉ 3 phút. Hỏi người thợ mộc cưa xong cái cây đó trong bao nhiêu phút?",
 		"image": null,
 		"answer": 1,
 		"explanation": "29 phút. Anh ta cần cưa 4 lần, nhưng anh ta chỉ cần nghỉ 3 lần vì sau khi cưa xong lần thứ 4, anh ấy đã hoàn thành mà không cần nghỉ thêm. Vậy đáp án là $4*5 + 3*3$",
@@ -167,55 +130,13 @@
 		]
 	},
 	{
-		"difficulty": 3,
-		"question": "Bạn Hoàng đang đánh tiến lên với bộ bài 52 lá cùng với 3 người bạn. Biết Hoàng không có ba bích nên không thể đi đầu. Tính xác xuất bạn An bên cạnh Hoàng sở hữu lá 3 bích.",
-		"image": null,
-		"answer": 1,
-		"explanation": "Hoàng không có, vậy khả năng 1 trong ba người còn lại có là 1\/3",
-		"id": 30,
-		"choices": [
-			"1\/2",
-			"1\/3",
-			"1\/4",
-			"1\/5"
-		]
-	},
-	{
 		"difficulty": 1,
-		"question": "Sử dụng các số và kí hiệu toán học sau để có phép tính có kết quả bằng 14. Không nhất thiết phải dùng hết",
-		"image": "cau-1-5886-1658140256 - Đào Tuấn Sơn.png",
-		"answer": 3,
-		"explanation": null,
-		"id": 31,
-		"choices": [
-			"15+6\/6",
-			"16-5",
-			"6\/6-15",
-			"-6\/6+15"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Bạn Khải có một trang trại gồm 40 con heo và 20 con bò. Hằng ngày, mỗi con heo tiêu thụ hết 5 kg cám heo và mỗi con bò sẽ ăn hết 10 kg cỏ xanh. Biết rằng mỗi kg cám heo tốn có giá 10000VNĐ và mỗi kg cỏ có giá 2000VNĐ. Hỏi, vậy có tất cả bao nhiêu loài vật trên trang trại của Khải?",
+		"question": "Bạn Khải có một trang trại gồm 40 con heo và 20 con bò. Hằng ngày, mỗi con heo tiêu thụ hết 5 kg cám heo và mỗi con bò sẽ ăn hết 10 kg cỏ xanh. Biết rằng mỗi kg cám heo tốn giá 10 000 đồng và mỗi kg cỏ giá 2 000 đồng. Hỏi có tất cả bao nhiêu loài vật trong trang trại của Khải?",
 		"image": "Minecraft Pig and Cow - Jack Pham.jpg",
 		"answer": "2",
 		"explanation": null,
 		"id": 34,
 		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Tính tuổi Mai. Biết 4 năm trước tuổi bố gấp 5 lần tuổi Mai, 3 năm sau tuổi bố gấp 3 tuổi Mai",
-		"image": null,
-		"answer": 0,
-		"explanation": "Gọi số tuổi Mai là a, tuổi bố là b.\n4 năm trước tuổi bố gấp 5 lần tuổi Mai nên ta có:\n$5(a - 4) = b - 4 \\Lrarr 5a = b + 16$ (*)\n3 năm sau tuổi bố gấp 3 lần tuổi Mai nên ta có: \n$3(a + 3) = b + 3 \\Lrarr 3a = b - 6$ (**)\nTừ (*) và (**) $\\Rarr 5a - 3a = b + 16 - b + 6 \\Lrarr 2a=22$\n=> $a = 22 \/ 2 = 11$",
-		"id": 36,
-		"choices": [
-			"11",
-			"39",
-			"15",
-			"17"
-		]
 	},
 	{
 		"difficulty": 1,
@@ -228,7 +149,7 @@
 	},
 	{
 		"difficulty": 1,
-		"question": "22\/3\/2025 là thứ bảy thì 22\/3\/2030 là thứ mấy? ",
+		"question": "Nếu ngày 22\/3\/2025 là thứ bảy thì 22\/3\/2030 là thứ mấy? ",
 		"image": null,
 		"answer": 2,
 		"explanation": "Mỗi năm, thứ của một ngày tăng lên 1 (vì 365 \/ 7 dư 1), riêng năm 2028 là năm nhuận nên tăng 2 → ngày 22\/3\/2030 là T6",
@@ -241,17 +162,8 @@
 		]
 	},
 	{
-		"difficulty": 1,
-		"question": "Tựa game gacha mà bạn Long chơi vừa ra mắt một nhân vật mới cực kì mạnh mà bạn ấy cũng cực kì thích. Tỉ lệ để quay trúng nhân vật này là 0.12% và tỉ lệ được cộng thêm 5% với mỗi lần quay sau lần quay thứ 100.\n\nHiện tại bạn long đang có 50 vé quay và mỗi ngày cày game bạn sẽ được nhận thêm 1 vé quay với mỗi 7 phút chơi game, tối đa 5 vé (chưa tính ngày hôm nay vì Long chỉ mới đăng nhập vào game). Đảm bảo bạn Long sẽ trúng được nhân vật trước khi sự kiện kết thúc, liệu nếu may mắn, thì bạn Long sẽ phải phí thêm ít nhất bao nhiêu phút cuộc đời để cày vé quay?",
-		"image": "Gacha Addict Bingo v0 - Jack Pham.webp",
-		"answer": "0",
-		"explanation": "Tuy tỉ lệ xảy ra thấp, nhưng với đủ may mắn thì Long có thể quay ra được nhân vật chỉ với 50 vé có sẵn",
-		"id": 39,
-		"choices": []
-	},
-	{
 		"difficulty": 5,
-		"question": "Giả sử 1 người cần đi từ làng A đến con sông BC lấy nước, sau đó đến làng D, hỏi đường đi ngắn nhất người đó phải đi là bao nhiêu mét ",
+		"question": "Giả sử một người cần đi từ làng A đến con sông BC lấy nước rồi sau đó đến làng D (các quãng đường như trong hình vẽ). Hỏi đường đi ngắn nhất người đó phải đi là bao nhiêu mét? ",
 		"image": "1 - Lê Phú Trọng.png",
 		"answer": "100",
 		"explanation": "Gọi D' là điểm đối xứng của D qua C. E là điểm ta chọn trên BC. Ta có AE + ED = AE + ED' >= AD'. Dấu \"=\" xảy ra <=> A, E, D' thẳng hàng. Vậy khoảng cách ngắn nhất là AD' = sqrt((AB+CD')^2 + BC^2) = sqrt((40+20)^2+80^2) = 100",
@@ -260,7 +172,7 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Cho $a+b=10$, $a*b=21$. tính $a^2+b^2$",
+		"question": "Cho $a+b=10$, $a*b=21$. Tính $a^2+b^2$",
 		"image": null,
 		"answer": 0,
 		"explanation": "$a^2+b^2=(a+b)^2−2ab = 10^2−2*21 = 100−42 = 58$",
@@ -273,45 +185,8 @@
 		]
 	},
 	{
-		"difficulty": 1,
-		"question": "Số nào trong tiếng Anh có các chữ cái viết theo thứ tự bảng chữ cái?",
-		"image": null,
-		"answer": 1,
-		"explanation": "FORTY - đây là số duy nhất được viết theo thứ tự bảng chữ cái trong tiếng Anh.",
-		"id": 44,
-		"choices": [
-			"4",
-			"40",
-			"12",
-			"8"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Trong ngày ăn mừng đầy tháng của Hoàng, ông nội bảo Hoàng rằng ông lớn hơn Hoàng 720 lần. Vì còn nhỏ nên Hoàng không thể tính được tuổi của ông nội, bạn hãy giúp Hoàng tìm câu trả lời.",
-		"image": "Google Search Image - Jack Pham.png",
-		"answer": "60",
-		"explanation": "Hoàng 1 tháng tuổi, ông lớn hơn 720 lần → ông 720 tháng tuổi = 60 tuổi",
-		"id": 45,
-		"choices": []
-	},
-	{
 		"difficulty": 2,
-		"question": "Nhiệt độ duy nhất giống nhau ở Fahrenheit và Celsius là?",
-		"image": null,
-		"answer": 2,
-		"explanation": "$F=C*1.8+32$\nTa có: $(-40)*1.8+32=(-40)$",
-		"id": 46,
-		"choices": [
-			"40",
-			"32",
-			"-40",
-			"-32"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Dãy số chỉ gồm các số nguyên tố là",
+		"question": "Dãy số nào trong các dãy số sau chỉ gồm các số nguyên tố?",
 		"image": null,
 		"answer": 2,
 		"explanation": "Số nguyên tố là số chỉ có hai ước duy nhất là 1 và chính nó.\nCâu A: 1 không phải là số nguyên tố (vì nó chỉ có 1 ước là 1)\nCâu B: 21 không phải là số nguyên tố (vì nó có 4 ước là 1, 3, 7, 21)\nCâu D: 77 không phải là số nguyên tố (vì nó có 4 ước là 1, 7, 11, 77)",
@@ -325,8 +200,8 @@
 	},
 	{
 		"difficulty": 4,
-		"question": "Điền số còn thiếu vào ô trống",
-		"image": "205405 - Nguyễn Đường Gia Truyền.png",
+		"question": "Điền số còn thiếu vào \"?\".",
+		"image": "Ảnh chụp màn hình 2025-03-12 205405 - Nguyễn Đường Gia Truyền.png",
 		"answer": "29",
 		"explanation": "Tích 2 số lớn trừ số bé nhất bình phương: 9*5 - 4*4",
 		"id": 49,
@@ -334,7 +209,7 @@
 	},
 	{
 		"difficulty": 2,
-		"question": "Evo là người chạy nhanh thứ 50 và cũng là người chạy chậm thứ 50 trong cuộc thi ở trường. Tổng cộng có bao nhiêu học sinh tham gia cuộc thi?",
+		"question": "Trong một cuộc thi chạy ở trường, Evo là người chạy nhanh thứ 50 và cũng là người chạy chậm thứ 50. Hỏi có tổng cộng có bao nhiêu học sinh tham gia cuộc thi chạy đó?",
 		"image": null,
 		"answer": 1,
 		"explanation": "Có 49 học sinh chạy nhanh hơn Evo, 49 học sinh chạy chậm hơn Evo, và chính Evo. Tổng số học sinh là 49+49+1=99. ",
@@ -348,7 +223,7 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Nếu 5 con mèo có thể bắt 5 con chuột trong 5 phút, cần bao nhiêu con mèo để bắt được 100 con chuột trong 100 phút?",
+		"question": "Nếu 5 con mèo có thể bắt 5 con chuột trong 5 phút (giả sử khả năng bắt chuột của mỗi con mèo là như nhau), cần bao nhiêu con mèo để bắt được 100 con chuột trong 100 phút?",
 		"image": null,
 		"answer": 0,
 		"explanation": "1 con mèo bắt được 1 con chuột trong 5 phút => 1 con mèo bắt được 100 con chuột trong 500 phút => 5 con mèo bắt được 100 con chuột trong 100 phút. ",
@@ -362,7 +237,7 @@
 	},
 	{
 		"difficulty": 4,
-		"question": "Long Truong đi cướp ngân hàng.\n\nTuy nhiên, bạn phải giúp anh ta phá khóa két sắt\n\nGợi ý về mật khẩu\n\n- Là số có bốn chữ số\n- Tất cả các chữ số đều khác nhau.\n- Nó bắt đầu và kết thúc bằng một số lẻ và có hai số chẵn ở giữa.\n- 19 và 519 là ước của số này",
+		"question": "X đang dự định cướp ngân hàng.\n\nTuy nhiên, bạn phải giúp anh ta phá khóa két sắt\n\nGợi ý về mật khẩu của két sắt như sau:\n\n- Là số có bốn chữ số\n- Tất cả các chữ số đều khác nhau.\n- Nó bắt đầu và kết thúc bằng một chữ số lẻ và có hai chữ số chẵn ở giữa.\n- 19 và 519 là ước của số này",
 		"image": null,
 		"answer": "9861",
 		"explanation": "19*519",
@@ -408,7 +283,7 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Có bao nhiêu hình vuông trong hình?  ",
+		"question": "Có tất cả bao nhiêu hình vuông trong hình vẽ sau?  ",
 		"image": "f033b831-3143-4b1f-b5c2-ea3060c26a7c - Minh Đức Phan.jpg",
 		"answer": 3,
 		"explanation": "1 hình vuông lớn, 4 hình vuông nhỏ, 2 hình vuông mini",
@@ -421,22 +296,8 @@
 		]
 	},
 	{
-		"difficulty": 4,
-		"question": "Chữ L trong la mã nghĩa là gì",
-		"image": null,
-		"answer": 3,
-		"explanation": null,
-		"id": 57,
-		"choices": [
-			"10",
-			"100",
-			"1000",
-			"50"
-		]
-	},
-	{
 		"difficulty": 2,
-		"question": "Đức đăng ký đang tham gia một cuộc thi chạy việt dã. Khi thi đấu, cậu bứt tốc vượt được vận động viên ở vị trí số 2 ngay trước khi cán đích. Vậy Đức đã kết thúc ở vị trí số mấy?",
+		"question": "Đức đăng ký đang tham gia một cuộc thi chạy việt dã. Khi sắp về đích, cậu bứt tốc vượt được vận động viên đang ở vị trí số 2 ngay trước khi cán đích. Vậy Đức đã kết thúc cuộc thi đó ở vị trí số mấy?",
 		"image": null,
 		"answer": "2",
 		"explanation": "Vượt 2 thì lên được 2 chứ chẳng lẽ lại lên 1",
@@ -445,8 +306,8 @@
 	},
 	{
 		"difficulty": 4,
-		"question": "Sau khi ăn 2 chiếc pizza, bạn Meo vẫn còn đang đói và thèm được ngấu nghiến miếng pizza \"?\" cuối cùng, tuy nhiên bạn ấy phải tìm được hàm lượng calo của miếng đó để tránh bị béo phì:\nNếu hàm lượng calo miếng pizza đó <= 25: bạn Meo được ăn\nNếu hàm lượng calo miếng pizza đó > 25: bạn Meo không được ăn\nHỏi bạn Meo có được ăn không?",
-		"image": "214639 - Nguyễn Đường Gia Truyền.png",
+		"question": "Sau khi ăn 2 chiếc pizza, bạn Meo vẫn còn đang đói và thèm được ngấu nghiến miếng pizza \"??\" cuối cùng, tuy nhiên bạn ấy phải tìm được hàm lượng calo của miếng đó để tránh bị béo phì:\nNếu hàm lượng calo miếng pizza đó <= 25: bạn Meo được ăn\nNếu hàm lượng calo miếng pizza đó > 25: bạn Meo không được ăn\nHỏi bạn Meo có được ăn không?",
+		"image": "Ảnh chụp màn hình 2025-03-12 214639 - Nguyễn Đường Gia Truyền.png",
 		"answer": 0,
 		"explanation": "Hai số bên phải cộng lại = Số bên trái nhân 5:\nVí dụ: 27*5 = 56 + 79\n\n=> ? = 16*5 - 56 => ? = 24",
 		"id": 59,
@@ -456,73 +317,8 @@
 		]
 	},
 	{
-		"difficulty": 2,
-		"question": "So sánh $1÷9 - 1÷10$ và $1÷90$",
-		"image": null,
-		"answer": 2,
-		"explanation": null,
-		"id": 60,
-		"choices": [
-			"$1÷9 - 1÷10 > 1÷90$",
-			"$1÷9 - 1÷10 < 1÷90$",
-			"$1÷9 - 1÷10 = 1÷90$",
-			"Không xác định"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Tính $(-3)^8$, biết $(-3)^7 = -2187$",
-		"image": null,
-		"answer": 2,
-		"explanation": null,
-		"id": 61,
-		"choices": [
-			"-6 561",
-			"-6 321",
-			"6 561",
-			"6321"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Tại một lễ hội trường học, mọi người được yêu cầu đoán xem có bao nhiêu hạt đậu trong một lọ.\n\nKhông ai đoán đúng, nhưng những con số gần đúng nhất là 163, 169, 178 và 182.\n\nMột trong những con số lệch một, một số lệch ba, một số lệch mười và một số lệch mười sáu.\n\nCó bao nhiêu hạt đậu trong lọ?",
-		"image": null,
-		"answer": "179",
-		"explanation": null,
-		"id": 62,
-		"choices": []
-	},
-	{
 		"difficulty": 1,
-		"question": "Có 3 chiếc hộp, hộp đỏ có quả táo, hộp xanh có quả lê và hộp vàng có cả 2 loại trái cây. Nếu chỉ được chọn một hộp, bạn chọn hộp nào để có thể có cả quả táo và quả lê?",
-		"image": null,
-		"answer": 0,
-		"explanation": "Chọn hộp vàng, vì nó có cả quả táo và quả lê.",
-		"id": 63,
-		"choices": [
-			"Hộp vàng",
-			"Hộp đỏ",
-			"Hộp xanh",
-			"Không có phương án tối ưu"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Một người thợ may có 1 tấm vải dài 10 mét vải. Mỗi ngày anh ta cắt một mảnh dài 2 mét. Vậy sau bao nhiêu ngày thì anh ta sẽ cắt hết số vải đó?",
-		"image": null,
-		"answer": 0,
-		"explanation": "Chỉ cần 4 ngày anh ta đã cắt hết 10 mét vải thành 5 mảnh vải rồi.",
-		"id": 64,
-		"choices": [
-			"4",
-			"5",
-			"6",
-			"7"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "2 con vịt đi trước 2 con vịt, 2 con vịt đi sau 2 con vịt, 2 con vịt đi giữa 2 con vịt. Hỏi tổng cộng có mấy con vịt?",
+		"question": "Các con vịt xếp hàng dọc đi: 2 con vịt đi trước 2 con vịt, 2 con vịt đi sau 2 con vịt, 2 con vịt đi giữa 2 con vịt. Hỏi tổng cộng có mấy con vịt?",
 		"image": null,
 		"answer": 2,
 		"explanation": "Xếp 4 con vịt theo hàng dọc là ra",
@@ -545,7 +341,7 @@
 	},
 	{
 		"difficulty": 2,
-		"question": "Một phụ nữ hái táo trong vườn. Để ra khỏi khu vườn, bà phải đi qua 4 cánh cửa, mà mỗi cánh cửa bề đều phải để lại ½ số táo hiện có cho lính canh. Bà mang được 10 quả táo về nhà. Hỏi số táo mà đám lính canh đã giữ lại?",
+		"question": "Một phụ nữ hái táo trong vườn. Để ra khỏi khu vườn, bà phải đi qua 4 cánh cửa, ở mỗi cánh cửa bà đều phải để lại ½ số táo hiện có cho lính canh. Cuối cùng bà mang được 10 quả táo về nhà. Hỏi số táo mà đám lính canh đã giữ lại là bao nhiêu?",
 		"image": null,
 		"answer": 1,
 		"explanation": "Tổng số táo mà bà đã hái: $10 * 2 * 2 * 2 * 2 = 160$ quả.\nSố táo những lính canh đã giữ lại: $160 - 10 = 150$ quả",
@@ -559,7 +355,7 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Một nông dân có 5 con vật, gồm thỏ và mèo. Biết rằng tổng số chân của tất cả các con vật là 14. Mỗi con thỏ có 2 chân, mỗi con mèo có 4 chân. Hỏi nông dân có bao nhiêu con thỏ?",
+		"question": "Một nông dân có 5 con vật, gồm thỏ và mèo. Biết rằng tổng số chân của tất cả các con vật là 14. Mỗi con thỏ có 2 chân, mỗi con mèo có 4 chân. Hỏi người nông dân có bao nhiêu con thỏ?",
 		"image": null,
 		"answer": 2,
 		"explanation": "Gọi số con thỏ là x và số con mèo là y. Ta có hệ phương trình:\n$\\begin{cases} x + y = 5 \\\\ 2x + 4y = 14 \\end{cases}$\n$\\Rarr x = 3$",
@@ -586,91 +382,7 @@
 		]
 	},
 	{
-		"difficulty": 3,
-		"question": "Một túi kẹo chứa 30 viên. Trong số đó, 1\/3 số kẹo có màu hồng và 1\/5 số kẹo có màu xanh. Hỏi số viên kẹo còn lại (các màu khác) là bao nhiêu?",
-		"image": null,
-		"answer": 2,
-		"explanation": "Số viên kẹo màu hồng: $\\frac13 * 30 = 10$ viên.\nSố viên kẹo màu xanh: $\\frac15 * 30 = 6$ viên.\nTổng số viên kẹo màu hồng và xanh: $10 + 6 = 16$ viên.\nSố viên kẹo còn lại: $30 - 16 = 14$ viên.",
-		"id": 72,
-		"choices": [
-			"18 viên",
-			"16 viên",
-			"14 viên",
-			"12 viên"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Trong một cặp số, số thứ nhất gấp đôi số thứ hai. Nếu tổng của hai số là 18, thì số thứ hai là bao nhiêu?",
-		"image": null,
-		"answer": 2,
-		"explanation": "Gọi số thứ hai là x nên số thứ nhất là 2x. Theo bài toán:\n$x + 2x = 18 → 3x = 18 → x = 6$",
-		"id": 73,
-		"choices": [
-			"2",
-			"4",
-			"6",
-			"8"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Số nào là căn bậc hai của 64",
-		"image": null,
-		"answer": 2,
-		"explanation": "Căn bậc hai của số a là x sao cho $x^2=a$.\nCòn căn bậc hai SỐ HỌC của a là x sao cho $x^2=a$ và $x > 0$",
-		"id": 74,
-		"choices": [
-			"8",
-			"-8",
-			"±8",
-			"±4"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Một hình chữ nhật có chiều dài gấp 3 lần chiều rộng. Biết chu vi của hình chữ nhật là 32 cm, hỏi chiều dài của hình chữ nhật là bao nhiêu?",
-		"image": null,
-		"answer": 2,
-		"explanation": "Gọi chiều rộng là w nên chiều dài là 3w. Chu vi hình chữ nhật là:\n$2(w + 3w) = 8w = 32$\n$\\Rarr w = 4 cm$, do đó chiều dài = $3 * 4 = 12 cm$",
-		"id": 75,
-		"choices": [
-			"16",
-			"14",
-			"12",
-			"10"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Một người cha 50 tuổi có con trai 20 tuổi. Hỏi sau bao nhiêu năm nữa, tuổi của người cha sẽ gấp đôi tuổi của con trai?",
-		"image": null,
-		"answer": 2,
-		"explanation": "Giả sử sau t năm nữa, ta có:\nTuổi cha = $50 + t$\nTuổi con = $20 + t$\nYêu cầu: $50 + t = 2(20 + t)$\n→ t = 10 năm.",
-		"id": 76,
-		"choices": [
-			"20",
-			"15",
-			"10",
-			"5"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Một con ốc sên leo lên một cây cao 10m. Ban ngày nó leo lên được 3m, ban đêm lại tụt xuống 2m. Hỏi sau bao nhiêu ngày ốc sên mới lên tới đỉnh cây?",
-		"image": null,
-		"answer": 2,
-		"explanation": "Mỗi ngày ốc sên tiến lên được $3−2=1m$, nhưng đến ngày thứ 7 nó đã leo được 7m. Ngày thứ 8 leo thêm 3m nữa và chạm đỉnh mà không cần tụt xuống.",
-		"id": 79,
-		"choices": [
-			"10 ngày",
-			"9 ngày",
-			"8 ngày",
-			"7 ngày"
-		]
-	},
-	{
-		"difficulty": 4,
+		"difficulty": 1,
 		"question": "Tính tổng của dãy số:\nS = 1 - 2 + 3 - 4 + … + 99 - 100",
 		"image": null,
 		"answer": 2,
@@ -681,6 +393,20 @@
 			"-1",
 			"-50",
 			"-100"
+		]
+	},
+	{
+		"difficulty": 2,
+		"question": "Bạn có một chiếc đồng hồ treo tường. Kim phút và kim giờ trùng nhau mấy lần trong 12 giờ (từ 0 giờ đến 12 giờ)?",
+		"image": null,
+		"answer": 3,
+		"explanation": "Trong 12 giờ, kim phút vượt kim giờ 11 lần.",
+		"id": 83,
+		"choices": [
+			"10",
+			"9",
+			"12",
+			"11"
 		]
 	},
 	{
@@ -698,34 +424,6 @@
 		]
 	},
 	{
-		"difficulty": 1,
-		"question": "Nếu 3 con gà trong 3 ngày đẻ được 3 quả trứng, thì trong 9 ngày, 9 con gà sẽ đẻ được bao nhiêu quả trứng?",
-		"image": null,
-		"answer": 2,
-		"explanation": "Theo đề bài, 3 con gà đẻ 3 quả trứng trong 3 ngày, nghĩa là 1 con gà đẻ được 1 quả trứng trong 3 ngày.\nTrong 9 ngày, 1 con gà đẻ được 3 quả trứng (vì 9\/3 = 3).\n9 con gà sẽ đẻ được: 9 * 3 = 27 quả trứng.",
-		"id": 85,
-		"choices": [
-			"18",
-			"81",
-			"27",
-			"9"
-		]
-	},
-	{
-		"difficulty": 5,
-		"question": "Có 1000 bình thuốc chuẩn bị xuất khẩu nhưng 1 bình thuốc trong đó đã nhiễm độc. Người ta quyết định dùng 10 tên tử tù để thử thuốc. Quản ngục có 1 ngày để tìm ra bình thuốc đó. Độc dược sẽ phát huy sau 24h, do vậy ông ta chỉ có một cơ hội duy nhất để làm điều đó. Biết rằng quản ngục được quyền ép bất cứ tử tù nào uống bất cứ bình thuốc nào. Ông ta cần ít nhất bao nhiêu tử tù để chắc chắn tìm ra được bình thuốc bị nhiễm độc?",
-		"image": null,
-		"answer": 0,
-		"explanation": "Mỗi chai rượu từ 1 đến 1000 đều có thể quy đổi ra nhị phân với 10 bit (2^10 > 1000). Ở mỗi bit trong chai rượu, cho tử tù thứ n uống nếu bit đó là số 1. Khi k người tử tù nhiễm độc, sử dụng vị trí của người tử tù để truy lại vị trí bình rượu. Vậy, cần ít nhất 10 tử tù.",
-		"id": 86,
-		"choices": [
-			"10",
-			"100",
-			"250",
-			"500"
-		]
-	},
-	{
 		"difficulty": 2,
 		"question": "Tìm số tiếp theo trong dãy số sau:\n1, 3, 6, 10, 15, ?",
 		"image": null,
@@ -737,48 +435,6 @@
 			"20",
 			"21",
 			"22"
-		]
-	},
-	{
-		"difficulty": 5,
-		"question": "Số La Mã sau đây mang giá trị nào: MDCLXVI",
-		"image": null,
-		"answer": 2,
-		"explanation": "M = 1000; D = 500; C = 100; L = 50; X = 10; V = 5; I = 1",
-		"id": 88,
-		"choices": [
-			"1111",
-			"1256",
-			"1666",
-			"1356"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Có 3 chuồng chim, bỏ ngẫu nhiên các con chim vào chuồng. Hỏi cần bỏ ít nhất bao nhiêu con chim để chắc chắn ít nhất 1 chuồng có 3 con chim.",
-		"image": null,
-		"answer": 2,
-		"explanation": "Trường hợp tệ nhất: 6 con trong 3 chuồng, mỗi chuồng 2 con.",
-		"id": 89,
-		"choices": [
-			"3",
-			"9",
-			"7",
-			"5"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Sử dụng hai cọng dây, mỗi cọng dây tốn 60 phút để đốt. Tìm cách để đo chính xác 45 phút.",
-		"image": null,
-		"answer": 2,
-		"explanation": "Đốt dây 1 từ hai đầu và đốt một đầu dây 2. Khi dây 1 cháy xong (hết 30p), đốt đầu còn lại của dây 2. Vì dây 2 đã cháy hết một nửa nên lúc này dây 2 sẽ cháy thêm 15p.",
-		"id": 90,
-		"choices": [
-			"Đốt dây 1 và dây 2 lần lượt",
-			"Đốt dây 1 và dây 2 cùng lúc",
-			"Đốt dây 1 từ hai đầu và đốt một đầu dây 2. Khi dây 1 cháy xong, đốt đầu còn lại của dây 2.",
-			"Đốt 2 đầu dây 2. Sau đó đốt hay đầu dây 1"
 		]
 	},
 	{
@@ -824,175 +480,8 @@
 		]
 	},
 	{
-		"difficulty": 1,
-		"question": "Jimmy có 10 quả táo và 10 quả cam\nJimmy donate 3 quả táo\nHỏi số cam còn lại",
-		"image": null,
-		"answer": 1,
-		"explanation": "Donate số táo mà không donate cam",
-		"id": 98,
-		"choices": [
-			"7",
-			"10",
-			"17",
-			"5"
-		]
-	},
-	{
 		"difficulty": 3,
-		"question": "Điền số thích hợp vào vị trí dấu hỏi chấm.",
-		"image": "E5BDB110-A7B2-4E97-BF05-1FB8E03747BA - Như Nguyễn.png",
-		"answer": 2,
-		"explanation": "Quy luật: Ở mỗi hàng, hiệu hai số đầu (tính từ trái sang) nhân hai thì được số thứ ba.\n\n$(11 - 2) * 2 = 18$\n$(5 - 2) * 2 = 6$\n$(12 - 5) * 2 = 14$",
-		"id": 99,
-		"choices": [
-			"4",
-			"5",
-			"6",
-			"8"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Sinh viên Bách Khoa năm 3 được trợ cấp 3 triệu đồng từ đầu năm\nVới mỗi tháng thì sinh viên này chi tiêu một khoảng tiền cố định là 300k \nHỏi sau bao nhiêu tháng thì sinh viên này hết tiền?",
-		"image": null,
-		"answer": 2,
-		"explanation": "Ta gọi phương trình tương quan giữa số tiền còn lại của sinh viên Bách Khoa này là $y = 3000000 - 300000x$\nTa sẽ tìm được $y = 0$ nếu $x = 10$\n=> 10 tháng",
-		"id": 102,
-		"choices": [
-			"5",
-			"8",
-			"10",
-			"12"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Năm 2007 là Đinh Hợi, vậy năm 2027 là năm gì",
-		"image": "can-chi - Trần Anh Khôi.png",
-		"answer": 0,
-		"explanation": null,
-		"id": 104,
-		"choices": [
-			"Đinh Mùi",
-			"Giáp Mùi",
-			"Ất Dậu",
-			"Đinh Dậu"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Tổng 2 nghiệm của phương trình x^2 - 5x + 4?",
-		"image": null,
-		"answer": "5",
-		"explanation": null,
-		"id": 105,
-		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Với phương trình parabol y = 2x^2 + 4\nHãy tìm tọa độ đỉnh của phương trình",
-		"image": null,
-		"answer": 0,
-		"explanation": "Với phương trình $y = ax^2 + bx + c$\nTa có thể tìm được hoành độ của parabol $x = -b\/2a$\nTa thế lại vào phương trình để tìm tung độ",
-		"id": 106,
-		"choices": [
-			"(0;4)",
-			"(1;6)",
-			"(0;5)",
-			"(2;12)"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Jimmy là một cậu bé 10 tuổi, cậu mong muốn một ngày được trở thành phi hành gia. Thấy được ước mơ và hoài bão của con trai, cha Jimmy cho anh một bài tập liên quan đến Vật Lý để giúp anh cho chặng đường sau này\nTa có vận tốc của chiếc xe máy là 4 m\/s\nHỏi trong khoảng thời gian 3s, xe máy đã đi được đoạn đường bao nhiêu",
-		"image": null,
-		"answer": 0,
-		"explanation": null,
-		"id": 111,
-		"choices": [
-			"12",
-			"15",
-			"20",
-			"19"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Một hộp có 5 quả bóng đỏ, 3 quả bóng xanh, 4 quả bóng vàng. Hỏi cần bóc ít nhất bao nhiêu quả bóng để có được 2 quả bóng vàng",
-		"image": null,
-		"answer": 3,
-		"explanation": "Thì bốc 2 quả bóng vàng",
-		"id": 112,
-		"choices": [
-			"10",
-			"9",
-			"5",
-			"2"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Một khu vườn hình chữ nhật có tổng chiều rộng và chiều dài là 8cm, trong đó chiều dài gấp 3 lần chiều rộng. Giữa khu vườn có một hồ nước hình tròn nằm trọn trong khu vườn có bán kính là 1cm, hỏi diện tích đất của khu vườn là bao nhiêu?",
-		"image": "3 - Lê Phú Trọng.png",
-		"answer": 1,
-		"explanation": "$6*2-\\pi$",
-		"id": 113,
-		"choices": [
-			"8.85",
-			"8.86",
-			"8.87",
-			"8.88"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Cho 3 số tự nhiên a, b, c\nChúng ta biết rằng: \nb = a + 3, c = b + 3\nHãy tìm c - a",
-		"image": null,
-		"answer": 3,
-		"explanation": "b = a + 3\nc = b + 3\n=> c - a = b + 3 - b + 3 = 6",
-		"id": 115,
-		"choices": [
-			"5",
-			"8",
-			"2",
-			"6"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Tính tổng S = 1 + 2 + 3 + 4 + … + 100",
-		"image": null,
-		"answer": "5050",
-		"explanation": "$S = (100 + 1) * 100 \/ 2 = 101 * 50 = 5050$",
-		"id": 116,
-		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Vừa gà vừa chó\nBó lại cho tròn\nBa mươi sáu con\nMột trăm chân chẵn\nHỏi có bao nhiêu gà bao nhiêu chó ?",
-		"image": null,
-		"answer": 1,
-		"explanation": null,
-		"id": 118,
-		"choices": [
-			"10 gà 14 chó",
-			"22 gà 14 chó",
-			"14 gà 22 chó",
-			"14 gà 10 chó"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": " Có 3 anh em với số tuổi hiện tại đều là các số nguyên tố, và khoảng cách tuổi của họ cũng là số nguyên tố. Vậy tuổi của người thứ 2 là bao nhiêu?",
-		"image": null,
-		"answer": "5",
-		"explanation": "Số tuổi của 3 anh em là 2, 5 và 7",
-		"id": 121,
-		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Hai người A và B có một số quả bóng. A nói rằng B có số bóng nhiều gấp 3 lần của mình nên B đã tặng 10 quả cho A, nhưng khi đó B vẫn có số bóng gấp đôi A. Vậy B phải cho A thêm mấy quả nữa để số bóng của 2 người bằng nhau?",
+		"question": "Hai người A và B có một số quả bóng. A nói rằng B có số bóng nhiều gấp 3 lần của mình nên B đã tặng 10 quả cho A, nhưng khi đó B vẫn có số bóng gấp đôi số bóng của A. Vậy B phải cho A thêm mấy quả nữa để số bóng của hai người bằng nhau?",
 		"image": null,
 		"answer": "20",
 		"explanation": "Ban đầu B có 90 bóng và A có 30 bóng, do đó bây giờ B phải cho thêm A 20 bóng để bằng nhau.",
@@ -1001,20 +490,11 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Có 12 đứa trẻ trong một lớp học, trong đó 6 đứa trẻ đang đi tất và 4 đứa đang đi giày, có 3 đứa trẻ mang cả hai thứ đó. Vậy có bao nhiêu đứa trẻ đi chân trần?",
+		"question": "Có 12 đứa trẻ trong một lớp học, trong đó 6 đứa trẻ đang đi tất và 4 đứa trẻ đang đi giày, có 3 đứa trẻ vừa mang tất vừa mang giày. Hỏi có bao nhiêu đứa trẻ đi chân trần?",
 		"image": null,
 		"answer": "5",
 		"explanation": "Theo dữ kiện, trong 4 đứa trẻ đi giày có 3 đứa đi cả hai, tức là có 1 đứa chỉ đi giày mà không đi tất. Tương tự, có 3 đứa chỉ đi tất mà không đi giày. Vậy số đứa trẻ đi chân trần là 12 - (3 + 1 + 3) = 5",
 		"id": 123,
-		"choices": []
-	},
-	{
-		"difficulty": 2,
-		"question": "Có 25 bi đỏ, 47 bi xanh và 3 bi vàng trong một rổ. Một người bị bịt mắt phải chọn ít nhất bao nhiêu bi để chắc chắn có ít nhất 2 bi khác màu?",
-		"image": null,
-		"answer": "48",
-		"explanation": "Nếu chọn tối đa 47 bi thì có thể cùng màu xanh, do đó phải chọn ít nhất 48 bi để có 2 màu khác nhau.",
-		"id": 124,
 		"choices": []
 	},
 	{
@@ -1033,85 +513,6 @@
 	},
 	{
 		"difficulty": 2,
-		"question": "Lớp 9A20 có 69 bạn thích chơi Minecraft, 40 bạn thích chơi Roblox và 29 bạn thích chơi cả 2 trò chơi. Hỏi có bao nhiêu bạn chỉ thích chơi Minecraft?",
-		"image": null,
-		"answer": 1,
-		"explanation": "Cách 1: \nSố bạn chỉ thích chơi Minecraft = số bạn thích chơi Minecraft - số bạn thích chơi cả 2 trò chơi = 69 - 29 = 40\n\nCách 2 (mở rộng kiến thức, tuy cách làm này dài dòng hơn nhưng tổng quát hơn): Vì mỗi bạn đều thích ít nhất một trò chơi nênv\nSố học sinh của lớp = số bạn thích chơi Minecraft + số bạn thích chơi Roblox - số bạn thích chơi cả 2 trò chơi = 69 + 40 - 29 = 80\nSố bạn chỉ thích chơi Minecraft = số học sinh của lớp - số bạn thích chơi Roblox = 80 - 40 = 40",
-		"id": 126,
-		"choices": [
-			"20",
-			"40",
-			"50",
-			"30"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Ta có 2 số nguyên dương a và b\nChúng ta biết rằng a*b = a+b\nHãy tìm a nhỏ nhất và b nhỏ nhất",
-		"image": null,
-		"answer": 0,
-		"explanation": null,
-		"id": 128,
-		"choices": [
-			"a = 2, b = 2",
-			"a = 1, b = 2",
-			"a = 1, b = 3",
-			"a = 2, b = 4"
-		]
-	},
-	{
-		"difficulty": 5,
-		"question": "1^3+2^3+…+5^3 =?",
-		"image": null,
-		"answer": 1,
-		"explanation": "\n$(1+2+3+4+5)^2 =225$",
-		"id": 129,
-		"choices": [
-			"200",
-			"225",
-			"250",
-			"300"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Hãy tìm số còn thiếu ",
-		"image": "20250313_132718 - Thái Dương Nguyễn.jpg",
-		"answer": 2,
-		"explanation": "2 số ở 2 bên sẽ có tổng là số nằm giữa",
-		"id": 130,
-		"choices": [
-			"18",
-			"14",
-			"21",
-			"34"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Có 10 người trong một phòng họp. Tất cả mọi người đều bắt tay với những người còn lại mỗi người 1 lần. Hỏi có tất cả bao nhiêu cái bắt tay?",
-		"image": null,
-		"answer": "45",
-		"explanation": "n*(n-1)\/2",
-		"id": 131,
-		"choices": []
-	},
-	{
-		"difficulty": 2,
-		"question": "Tìm số lớn nhất có các chữ số khác nhau và tổng các chữ số của số đó là 6",
-		"image": null,
-		"answer": 1,
-		"explanation": "Tổng của số 6 có thể phân tích ra 5 + 1; 4 + 2 hoặc 3 + 3\nTa sẽ lấy phương án tối ưu nhất là cặp tổng có thể phân tích ra nhiều số nhất là 5 + 1\nTừ đây ta phân tích ra 3 + 2 + 1\n",
-		"id": 132,
-		"choices": [
-			"321",
-			"3210",
-			"1230",
-			"5410"
-		]
-	},
-	{
-		"difficulty": 2,
 		"question": "Tìm số có 3 chữ số biết tổng các chữ số là 26 và khi đổi chữ số ở hàng trăm và hàng đơn vị thì số đó không thay đổi",
 		"image": null,
 		"answer": 1,
@@ -1122,34 +523,6 @@
 			"989",
 			"113",
 			"115"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Hãy thay x và y vào 1996xy để số đó có thể chia hết cho 2, 5, 9",
-		"image": null,
-		"answer": 0,
-		"explanation": "Để số đã cho có thể chia hết cho 2 và 5 thì ta cần chữ số cuối chia hết cho 5 và 2\n=> y chỉ có thể là 0\nĐể số có thể chia hết cho 9 thì số phải có tổng chia hết cho 9\n=> x = 2",
-		"id": 135,
-		"choices": [
-			"x = 2 y = 0",
-			"x = 4 y = 5",
-			"x = 9 y = 5",
-			"x = 9 y = 0"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Một số tự nhiên lẻ có hai chữ số và chia hết cho 5. Hiệu của nó và chữ số hàng chục là 68. Hãy tìm chữ số đó ",
-		"image": null,
-		"answer": 0,
-		"explanation": "Vì số cần tìm là số lẻ và chia hết cho 5\n=> Chữ số hàng đơn vị là 5\nCòn lại thì ta thế số lớn hơn 6 ở hàng chục để tìm số hàng chục",
-		"id": 136,
-		"choices": [
-			"75",
-			"57",
-			"99",
-			"70"
 		]
 	},
 	{
@@ -1167,38 +540,6 @@
 		]
 	},
 	{
-		"difficulty": 3,
-		"question": "Tính diện tích tam giác được cho trên hình",
-		"image": "2 - Lê Minh Khải.png",
-		"answer": "6",
-		"explanation": "Áp dụng công thức heron: sqrt(p*(p-a)*(p-b)*(p-c)) = sqrt(6*3*2*1) = 6",
-		"id": 138,
-		"choices": []
-	},
-	{
-		"difficulty": 2,
-		"question": "Số tự nhiên nhỏ nhất chia hết cho tất cả các số: 1, 2, 4, 5, 10, 20, 25 là số nào?",
-		"image": null,
-		"answer": "100",
-		"explanation": null,
-		"id": 140,
-		"choices": []
-	},
-	{
-		"difficulty": 2,
-		"question": "Hai người đi trước hai người, hai người đi sau hai người, hai người đi giữa hai người. Hỏi tổng cộng có bao nhiêu người?",
-		"image": null,
-		"answer": 1,
-		"explanation": "2 người đi trước 2 người => có tổng cộng 4 người\ncmtt: hai người đi sau và hai người đi giữa",
-		"id": 141,
-		"choices": [
-			"2",
-			"4",
-			"6",
-			"8"
-		]
-	},
-	{
 		"difficulty": 1,
 		"question": "1 cầu vồng có 7 màu, hỏi 3 cầu vồng có mấy màu",
 		"image": null,
@@ -1211,173 +552,6 @@
 			"21",
 			"30"
 		]
-	},
-	{
-		"difficulty": 1,
-		"question": "10 chia 1\/5, và cộng 50. Đáp số bằng bao nhiêu?",
-		"image": null,
-		"answer": 2,
-		"explanation": "$10\/\\frac15 = 50$; $50+50 = 100$",
-		"id": 143,
-		"choices": [
-			"52",
-			"60",
-			"100",
-			"500"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Điền số vào ?: 1, 1, 2, 3, 5, 8, 13, ?",
-		"image": null,
-		"answer": 2,
-		"explanation": "Fibonacci",
-		"id": 145,
-		"choices": [
-			"20",
-			"17",
-			"21",
-			"22"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Khi nào nhìn 2 mà lại nói 10?",
-		"image": null,
-		"answer": 3,
-		"explanation": null,
-		"id": 148,
-		"choices": [
-			"Chữ số la mã",
-			"Mã số Ascii",
-			"Nhị phân",
-			"Trên mặt đồng hồ"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Cái gì có dưới, có trên. Nếu thêm vào dưới thì liền bé đi?",
-		"image": null,
-		"answer": 0,
-		"explanation": null,
-		"id": 149,
-		"choices": [
-			"Phân số",
-			"Số mũ",
-			"Số thập phân",
-			"Số nguyên tố"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Số lớn nhất có 3 chữ số liên tiếp là bao nhiêu",
-		"image": null,
-		"answer": "987",
-		"explanation": null,
-		"id": 152,
-		"choices": []
-	},
-	{
-		"difficulty": 1,
-		"question": "Chuột Mickey có 2 chân. Vịt nào có 2 chân?",
-		"image": null,
-		"answer": 3,
-		"explanation": null,
-		"id": 153,
-		"choices": [
-			"Vịt Donald",
-			"Vịt Trời",
-			"Vịt xám lông đen",
-			"Vịt nào chẳng có 2 chân"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Cho a = 6, b = 10, c = ?. Tìm c là số nguyên dương nhỏ nhất để bộ số (a, b, c) tạo thành 1 tam giác",
-		"image": null,
-		"answer": 2,
-		"explanation": "Để 1 bộ 3 số (x, y, z) tạo thành 1 tam giác thì cần thỏa điều kiện x + y > z với z là độ dài cạnh lớn nhất trong tam giác => c = b - a + 1 = 10 - 6 + 1 = 5",
-		"id": 154,
-		"choices": [
-			"3",
-			"4",
-			"5",
-			"6"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "9:3(1+2) = ?",
-		"image": null,
-		"answer": 1,
-		"explanation": "sau khi làm phép cộng thì áp dụng quy tắc “nhân chia trước cộng trừ sau”",
-		"id": 155,
-		"choices": [
-			"1",
-			"9",
-			"10",
-			"11"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Một lớp học có 35 học sinh thích học toán, 24 học sinh thích học tin và 10 học sinh thích học cả toán và tin. Hỏi lớp đó có bao nhiêu học sinh?",
-		"image": null,
-		"answer": "49",
-		"explanation": "35 + 24 - 10 = 49 ",
-		"id": 156,
-		"choices": []
-	},
-	{
-		"difficulty": 1,
-		"question": "Sơn có 1 tỷ tỷ việt nam đồng. Với một số tiền lớn như vậy, khi đi gửi tiết kiệm ngân hàng, thu ngân yêu cầu Sơn ghi số tiền ra ở dạng số vào phiếu để xác nhận thông tin. \n\nVậy con số Sơn cần ghi là bao nhiêu?",
-		"image": "1-ty - Jack Pham.jpeg",
-		"answer": 2,
-		"explanation": "1 tỷ có 9 số 0 => 1 tỷ tỷ có 18 số 0 ",
-		"id": 157,
-		"choices": [
-			"1E+16",
-			"1E+17",
-			"1E+18",
-			"1E+19"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Một người có 10 trái táo, 5 trái lê và 3 trái mận. Giá của táo, lê và mận lần lượt là 3x, 2y và 5z biết x,y,z là số trái còn lại. Tổng tiền anh ấy thu được sau khi bán hết là:",
-		"image": null,
-		"answer": 0,
-		"explanation": null,
-		"id": 158,
-		"choices": [
-			"225",
-			"0",
-			"55",
-			"160"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Búa ăn kéo, kéo ăn bao, bao ăn búa, làm sao để thắng lần lượt sau: búa, bao, búa, kéo, bao, kéo, bao, kéo, búa.",
-		"image": null,
-		"answer": 0,
-		"explanation": null,
-		"id": 160,
-		"choices": [
-			"bao, kéo, bao, búa, kéo, búa, kéo, búa, bao",
-			"bao, kéo, bao, búa, bao, búa, kéo, búa, bao",
-			"bao, kéo, bao, bao, kéo, bao, kéo, búa, bao",
-			"bao, kéo, bao, kéo, bao, búa, kéo, kéo, bao"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Cho một đường tròn có bán kính là 1, diện tích của hình vuông nội tiếp đường tròn đó là bao nhiêu ?",
-		"image": null,
-		"answer": "2",
-		"explanation": "Xét 1 tam giác vuông được tạo thành từ tâm và 2 đỉnh kề nhau trên hình vuông. Ta có S tam giác = 1\/2*1*1 = 1\/2. Mà S hình vuông = 4*S tam giác = 4*1\/2 = 2",
-		"id": 161,
-		"choices": []
 	},
 	{
 		"difficulty": 2,
@@ -1404,7 +578,7 @@
 	},
 	{
 		"difficulty": 2,
-		"question": "Trong các tháng 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 có bao nhiêu tháng có 31 ngày và nằm ngay sau một tháng cũng có 31 ngày?",
+		"question": "Trong các tháng 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 có bao nhiêu tháng có 31 ngày và tháng ngay trước đó cũng có 31 ngày?",
 		"image": null,
 		"answer": 1,
 		"explanation": "Tháng 8 (đi sau tháng 7) và tháng 1 (đi sau tháng 12)",
@@ -1417,17 +591,8 @@
 		]
 	},
 	{
-		"difficulty": 3,
-		"question": "Vào cuối buổi hòa nhạc, 10 người chào nhau sao cho mỗi người đều chào nhau chỉ 1 lần. Hỏi họ sẽ chào nhau tổng cộng bao nhiêu lần?",
-		"image": null,
-		"answer": "45",
-		"explanation": "Người 1 chào với 9 người còn lại\nNgười 2 đã chào với người 1 nên chào 8 người còn lại\nCứ vậy $\\Rarr 9+8+7+6+5+4+3+2+1 = 45$",
-		"id": 168,
-		"choices": []
-	},
-	{
 		"difficulty": 4,
-		"question": "Ôi không, chiếc balo siu quý giá của Mohammed vừa bị đánh cắp và anh ta cần kích hoạt chế độ “chống trộm” của nó trước khi tên trộm ra khỏi sân bay. Hãy giúp Mohammed tìm ra mã kích hoạt biết nó thoả các điều kiện:\n1 Gồm 3 chữ số\n2 Là một số nguyên tố có tổng 2 số cuối bằng 2\n3 Tích các chữ số là một số chính phương",
+		"question": "Ôi không! Chiếc balo quý giá của Mohammed vừa bị đánh cắp và anh ta cần kích hoạt chế độ “chống trộm” của ba lô trước khi tên trộm kịp ang theo ba lô tẩu thoát. Hãy giúp Mohammed tìm ra mã kích hoạt biết nó thoả các điều kiện sau:\n1 Gồm 3 chữ số\n2 Là một số nguyên tố có tổng 2 chữ số cuối bằng 2\n3 Tích các chữ số là một số chính phương",
 		"image": null,
 		"answer": "911",
 		"explanation": "Hehe",
@@ -1436,114 +601,7 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Cho 5 điểm không thẳng hàng, hỏi có thể tạo được bao nhiêu đoạn thẳng bẳng cách nối 2 điểm đã cho.",
-		"image": null,
-		"answer": 1,
-		"explanation": "Bài toán bắt tay: Gọi 5 điểm lần lượt là A, B, C, D, E:\n\nTa có:\n4 cách đoạn từ điểm A (AB, AC, AD, AE)\n3 đoạn từ điểm B, không tính BA (BC, BD, BE)\n2 đoạn từ điểm C, không tính CA và CB (CD, CE)\n1 đoạn DE\n\nVậy có 4+3+2+1=10 cách để tạo đoạn thẳng",
-		"id": 170,
-		"choices": [
-			"8",
-			"10",
-			"12",
-			"15"
-		]
-	},
-	{
-		"difficulty": 4,
-		"question": "Điền vào ô có dấu hỏi:",
-		"image": "2 - Long.png",
-		"answer": 0,
-		"explanation": "Tam giác pascal",
-		"id": 171,
-		"choices": [
-			"15",
-			"20",
-			"21",
-			"35"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Tìm x:",
-		"image": "1 - Long.png",
-		"answer": 0,
-		"explanation": "x° + 62° = 180°",
-		"id": 173,
-		"choices": [
-			"118",
-			"80",
-			"122",
-			"93"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Trong hộp có 10 viên bi đen và 15 viên bi trắng. Lấy 2 viên bi ngẫu nhiên trong hộp, tìm xác suất để ít nhất 1 viên bi được lấy có màu đen hoặc màu trắng.",
-		"image": null,
-		"answer": 3,
-		"explanation": "Trong hộp chỉ có hai màu đen và trắng, cho nên ta luôn lấy được một trong hai màu trên",
-		"id": 174,
-		"choices": [
-			"0.6",
-			"0.35",
-			"0.25",
-			"1"
-		]
-	},
-	{
-		"difficulty": 4,
-		"question": "$(5-\\frac{5}{3})*(5-\\frac{6}{3})*…*(5-\\frac{25}{3})=?$ (làm tròn đến hàng thập phân thứ nhất)",
-		"image": null,
-		"answer": 2,
-		"explanation": "Giữa phương trình có $(5-\\frac{15}3) = 0$",
-		"id": 175,
-		"choices": [
-			"3776.6",
-			"61.5",
-			"0",
-			"-61.5"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Tìm số nhỏ nhất chia hết cho 3, 4, 6 và 10",
-		"image": null,
-		"answer": 1,
-		"explanation": "Bội chung nhỏ nhất của 4 số trên là 60, hoặc có thể loại trừ đáp án:\nA không được vì 40 không chia hết cho 6\nB chia hết cho 4 số trên -> chọn B vì 2 lựa chọn sau lớn hơn 60",
-		"id": 176,
-		"choices": [
-			"40",
-			"60",
-			"90",
-			"120"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Là 1 fan Naruto, Khoa tin rằng để có thể trở thành Hokage thì anh cần phải thông thạo cả 5 nguyên tố hoả, phong, lôi, địa, thuỷ. Nhưng vì bản thân Khoa không có chakra nên anh quyết định tập luyện từ những điều cơ bản trước và cần sự giúp đỡ của bạn trên hành trình đánh bại Boruto để trở thành Hokage đệ Bát. Hãy giúp Khoa tính tổng của 5 số nguyên tố đầu tiên.",
-		"image": "naruto-the-fates-of-every-hokage-featured - Jack Pham.jpg",
-		"answer": "28",
-		"explanation": "2 + 3 + 5 + 7 + 11 = 28",
-		"id": 178,
-		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Gieo 2 lần liên tiếp một đồng xu cân đối đồng chất. Xác suất để cả 2 lần đều xuất hiện mặt sấp:",
-		"image": null,
-		"answer": 1,
-		"explanation": "$\\frac12 * \\frac12$",
-		"id": 180,
-		"choices": [
-			"1\/2",
-			"1\/4",
-			"0",
-			"1"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Một cửa hàng bán sữa trong hộp giấy. Giá của 1 hộp sữa là 5.000 VND.\nĐể khuyến khích phong trào tái chế và bảo vệ môi trường, cửa hàng cho phép khách hàng đổi 5 hộp sữa rỗng lấy 1 hộp sữa mới.\n\nLan được mẹ cho 90.000 VND để mua sữa. Với số tiền đó, sau khi mua và đổi hộp sữa, Lan có thể có tổng cộng bao nhiêu hộp sữa?",
+		"question": "Lan được mẹ cho 90 000 đồng để mua sữa (hộp giấy). Giá của 1 hộp sữa là 5 000 đồng.\nĐể khuyến khích phong trào tái chế và bảo vệ môi trường, cửa hàng bán sữa cho phép khách hàng đổi 5 vỏ hộp sữa lấy 1 hộp sữa mới.\nHỏi với số tiền đó, sau khi mua và đổi vỏ hộp sữa, Lan có thể có tổng cộng bao nhiêu hộp sữa?",
 		"image": null,
 		"answer": 0,
 		"explanation": "$\\frac{90}5=18$. sau đó \\frac{18}5 = 3$ dư 3 và $3+3=6\/5 =1$ dư 1 => đáp án = 18+3+1 =22",
@@ -1554,15 +612,6 @@
 			"18",
 			"21"
 		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Bạn An sau khi đánh sicbo hết tiền thì quyết định ăn rau thay cơm. Bà 7 bán 7 ngàn một bó nhưng mua 2 bó còn 12 ngàn. Bà 8 bán 8 ngàn một bó nhưng 3 bó thì còn 20 ngàn. Biết bạn An muốn mua 4 bó, vậy tốn hết bao nhiêu tiền.",
-		"image": null,
-		"answer": "24",
-		"explanation": "$12*2<20+8$",
-		"id": 183,
-		"choices": []
 	},
 	{
 		"difficulty": 1,
@@ -1622,191 +671,29 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Tìm số tiếp theo của dãy số: 1, 4, 10, 22, 46, ?.",
-		"image": null,
+		"question": "Giữa một chiếc pizza có đường kính 8 inch và hai chiếc pizza có đường kính 4 inch, bạn nên chọn sự lựa chọn nào để có được nhiều hơn?",
+		"image": "https:\/\/drive.google.com\/open?id=1Sn5faCsrMAQLMt-lYKPzNws_brUGJs4m",
 		"answer": 0,
-		"explanation": "$1 + 3*2^0 = 4$\n$4 + 3*2^1 = 10$\n$10 + 3*2^2 = 22$\n$22 + 3*2^3 = 46$\n$46 + 3*2^4 = 94$",
-		"id": 188,
+		"explanation": "Với công thức tính diện tích hình tròn là: π*r^2, sau khi rút gọn π thì ta có:\n(8\/2)^2 > 2*((4\/2)^2) <=> 16 > 8\n=> chọn 1 chiếc pizza 8 inch thì ta sẽ có nhiều đồ ăn hơn :DDDDD",
+		"id": 206,
 		"choices": [
-			"94",
-			"101",
-			"120",
-			"95"
+			"Một pizza 8 inch",
+			"Hai pizza 4 inch",
+			"Hai lựa chọn bằng nhau"
 		]
 	},
 	{
-		"difficulty": 2,
-		"question": "Bạn đang đứng ở ô số 1. Ở mỗi bước nhảy, bạn có thể nhảy lên phía trước 1 ô hoặc 3 ô. Hỏi bạn cần ít nhất bao nhiêu bước nhảy để nhảy đến được chính xác ô số 9?",
-		"image": null,
-		"answer": 0,
-		"explanation": "Vì bạn đang đứng ở ô thứ 1 và ô cần đến là ô thứ 9 nên cần phải nhảy về phía trước đúng 8 ô. Để tối thiểu hoá số lượng bước nhảy thì bạn cần phải nhảy về phía trước 3 ô 2 lần và nhảy về phía trước 1 ô 2 lần, tổng cộng là 4 bước nhảy.",
-		"id": 190,
-		"choices": [
-			"4",
-			"3",
-			"6",
-			"5"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Một miếng vải dài 30m. Mỗi ngày, người thợ may cắt miếng vải này 1 lần. Hỏi sau mấy ngày thì miếng vải này được cắt thành các mảnh vải dài 5m?",
-		"image": null,
+		"difficulty": 3,
+		"question": "Một chiếc pizza có bán kính 10 inch lớn hơn một chiếc pizza có bán kính 5 inch bao nhiêu lần?",
+		"image": "https:\/\/drive.google.com\/open?id=196mXURmZ6pT3RWwbKMqCxO7Wi3TmZgsF",
 		"answer": 1,
-		"explanation": "Chỉ cần cắt 5 lần thì miếng vải đã thành 6 mảnh vải, mỗi mảnh vải dài 5m.",
-		"id": 191,
-		"choices": [
-			"1",
-			"5",
-			"6",
-			"2"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Hãy điền số tiếp theo: 3, 4, 7, 11, 18, 29",
-		"image": null,
-		"answer": 0,
-		"explanation": "Tổng 2 số liền trước bằng số tiếp theo",
-		"id": 193,
-		"choices": [
-			"47",
-			"57",
-			"37",
-			"67"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Tập hợp số vô tỉ được kí hiệu là:",
-		"image": null,
-		"answer": 3,
-		"explanation": "Z là số nguyên, Q là số hữu tỉ, R là số thực, I là số vô tỉ",
-		"id": 194,
-		"choices": [
-			"Z",
-			"Q",
-			"R",
-			"I"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Có bao nhiêu số chẵn là số nguyên tố",
-		"image": null,
-		"answer": 1,
-		"explanation": "Chỉ có một số chẵn là số nguyên tố, đó là số 2.",
-		"id": 196,
-		"choices": [
-			"0",
-			"1",
-			"2",
-			"Vô số"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Có bao nhiêu số vô tỉ sau đây: π, e, √2, √4, 3,(3241)",
-		"image": null,
-		"answer": 3,
-		"explanation": "π, e, √2 là các số vô tỉ; √4 là số tự nhiên; 3,(3241) là số hữu tỉ (số thập phân vô hạn tuần hoàn)",
-		"id": 197,
+		"explanation": "Với công thức tính diện tích hình tròn là: π*r^2, sau khi rút gọn π thì ta có:\n- 10^2 =100\n- 5^2 = 25\n100\/25 = 4 lần",
+		"id": 207,
 		"choices": [
 			"2",
 			"4",
-			"1",
-			"3"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Số chính phương là:",
-		"image": null,
-		"answer": 3,
-		"explanation": "A sai vì đó là số nguyên tố. B sai vì: số chính phương phải là số nguyên dương trong khi bình phương của \"một số khác\" thì không đảm bảo rằng \"một số khác\" cũng là số nguyên dương. C sai vì lý do tương tự. D đúng theo định nghĩa.",
-		"id": 198,
-		"choices": [
-			"Số chỉ có 2 nghiệm là 1 và chính nó",
-			"Bình phương của một số khác",
-			"Lập phương của một số khác",
-			"Số mà căn bậc 2 của nó cũng là số nguyên"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Phát có hai bình nước có thể tích lần lượt là 3L và 5L. Mẹ Phát nhờ cậu múc một bình nước 4L, liệu Phát có thể làm được điều đó không?",
-		"image": null,
-		"answer": 0,
-		"explanation": "- Đầu tiên Phát lấy đầy bình 3L rồi đổ vào bình 5L\n- Cậu lặp lại một lần nữa, nhưng khi đổ đầy bình 5L thì bình 3L còn lại 1L nước\n- Cậu đổ hết bình 5L đi, rồi đổ 1L còn xót lại vào\n- Cuối cùng cậu múc thêm 1 bình 3L và đổ vào được 4L nước\n\nPhí tận 5L nước, cơ mà thôi kệ :D",
-		"id": 200,
-		"choices": [
-			"Có",
-			"Không"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Đồ thị hàm số y = -177013x^2 cắt đồ thị hàm số y = 69 tại mấy điểm?",
-		"image": null,
-		"answer": 1,
-		"explanation": "Vì đồ thị hàm số y = -177013x^2 có a < 0 nên parabol có bề lõm hướng xuống và có đỉnh là điểm (0, 0) => Parabol không cắt đường thẳng là đồ thị của hàm số y = 69.",
-		"id": 202,
-		"choices": [
-			"2",
-			"0",
-			"1",
-			"3"
-		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Một khúc tre có 32 đốt. Ở mỗi lần cắt, bạn Uvuvwevwevwe onyetenvewve ugwemubwem ossas cắt đôi mọi khúc tre. Hỏi bạn ấy cần cắt bao nhiêu lần để có được 16 khúc tre?",
-		"image": null,
-		"answer": 3,
-		"explanation": "Cắt 1 lần, có được 2 khúc tre, mỗi khúc tre có 16 đốt.\nCắt 2 lần, có được 4 khúc tre, mỗi khúc tre có 8 đốt.\nCắt 3 lần, có được 8 khúc tre, mỗi khúc tre có 4 đốt.\nCắt 4 lần, có được 16 khúc tre, mỗi khúc tre có 2 đốt.\n\nDữ kiện khúc tre ban đầu có 32 đốt là để đảm bảo rằng sẽ cắt được thành 16 khúc tre cũng như để gây nhiễu =))",
-		"id": 203,
-		"choices": [
-			"5",
 			"6",
-			"3",
-			"4"
-		]
-	},
-	{
-		"difficulty": 1,
-		"question": "Ký tự vô hạn có cấu tạo gần giống chữ số nào?",
-		"image": null,
-		"answer": "8",
-		"explanation": "∞",
-		"id": 205,
-		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Tổng 5 số nguyên dương bất kỳ là 100. Tìm số lớn nhất.",
-		"image": null,
-		"answer": 2,
-		"explanation": "Bốn số 1 + 96 = 100",
-		"id": 209,
-		"choices": [
-			"27",
-			"90",
-			"96",
-			"99"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Tổng 5 số nguyên dương phân biệt là 100. Tìm số lớn nhất.",
-		"image": null,
-		"answer": 2,
-		"explanation": "1+2+3+4+90=100",
-		"id": 210,
-		"choices": [
-			"27",
-			"50",
-			"90",
-			"92"
+			"8"
 		]
 	},
 	{
@@ -1833,24 +720,6 @@
 		"choices": []
 	},
 	{
-		"difficulty": 4,
-		"question": "Điền số cần tìm ở ô có dấu chấm hỏi.",
-		"image": "https:\/\/cantho-school.fpt.edu.vn\/_next\/image?url=https%3A%2F%2Fcantho-school.fpt.edu.vn%2Fwp-content%2Fuploads%2Fcach-giai-toan-tu-duy-logic.jpg&q=75&w=1080",
-		"answer": "3",
-		"explanation": "Tổng các số ở mỗi cụm 4 ô bằng 31. Ta có:\n\n14 + 9 + 6 + 2 = 31\n\n5 + 11 + 4 + 11 = 31\n\n13 + 7 + 8 + 3 = 31",
-		"id": 216,
-		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Hãy tìm con số còn thiếu.",
-		"image": "https:\/\/cantho-school.fpt.edu.vn\/_next\/image?url=https%3A%2F%2Fcantho-school.fpt.edu.vn%2Fwp-content%2Fuploads%2Fdo-vui-hai-nao.jpg&q=75&w=1080",
-		"answer": "2",
-		"explanation": "Hình tròn ở giữa bằng tổng các hình tròn bên trên. Và ngược lại, hình tròn ở giữa bằng tổng các hình tròn bên dưới.",
-		"id": 217,
-		"choices": []
-	},
-	{
 		"difficulty": 5,
 		"question": "Trong hình ngôi sao dưới đây, mỗi cánh đều có giá trị khác nhau, hãy suy luận để tìm mối liên hệ giữa các số và tìm số còn thiếu.",
 		"image": "https:\/\/media-cdn-v2.laodong.vn\/Storage\/NewsPortal\/2020\/4\/9\/797085\/Cau-Do-Tinh-Toan2.jpg",
@@ -1865,36 +734,8 @@
 		]
 	},
 	{
-		"difficulty": 5,
-		"question": "Dùng khả năng tính toán, tư duy logic để tìm ra con số còn thiếu.\n\n195 → 383 → 575 → 763 → 955 → ?",
-		"image": null,
-		"answer": 3,
-		"explanation": "Bắt đầu với số có 3 chữ số đầu tiên, chữ số đầu tiên tăng thêm 2 ở số tiếp theo, chữ số ở giữa giảm đi 1 và chữ số bên tay phải xen kẽ giữa 5 và 3.",
-		"id": 219,
-		"choices": [
-			"1111",
-			"2222",
-			"4311",
-			"1143"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Cho x + y = 2. Tìm giá trị nhỏ nhất của biểu thức: S = x^2 + y^2.",
-		"image": null,
-		"answer": 2,
-		"explanation": "x = y = 1",
-		"id": 220,
-		"choices": [
-			"0",
-			"1",
-			"2",
-			"3"
-		]
-	},
-	{
 		"difficulty": 2,
-		"question": "Doanh thu của một cửa hàng quần áo kiếm được trong tháng 1 bằng 2\/5 doanh thu của tháng 12. Doanh thu trong tháng 2 bằng 1\/4 doanh thu của tháng 1. Doanh thu tháng 12 bằng bao nhiều lần doanh thu trung bình của tháng 1 và tháng 2?",
+		"question": "Doanh thu của một cửa hàng quần áo trong tháng 1 bằng 2\/5 doanh thu của tháng 12. Doanh thu trong tháng 2 bằng 1\/4 doanh thu của tháng 1. Doanh thu tháng 12 bằng bao nhiều lần doanh thu trung bình của tháng 1 và tháng 2?",
 		"image": null,
 		"answer": 3,
 		"explanation": "Có:\ndoanh thu t1 = 2\/5 doanh thu t12\ndoanh thu t2 = 1\/4 doanh thu t1\n=> doanh thu t2 = 1\/4 . 2\/5 doanh thu t12 = 1\/10 doanh thu t12\n\ndoanh thu t1 + t2:\n2\/5 + 1\/10 = 1\/2 doanh thu t12\n=> doanh thu t12 = 2 (doanh thu t1 + t2)",
@@ -1905,47 +746,6 @@
 			"4",
 			"2"
 		]
-	},
-	{
-		"difficulty": 2,
-		"question": "Bạn Tèo muốn làm trà với công thức sau: 1.2g đường cho mỗi 100 ml trà. Nếu bạn muốn pha 175ml trà đá, thì bạn cần bao nhiêu gram đường",
-		"image": null,
-		"answer": 2,
-		"explanation": "$1.2*175\/100 = 2.1$",
-		"id": 222,
-		"choices": [
-			"1,6g",
-			"1,9g",
-			"2,1g",
-			"2,3g"
-		]
-	},
-	{
-		"difficulty": 3,
-		"question": "Tìm số cuối cùng trong dãy dựa vào quy luật dãy số (các số trong dãy chỉ có thể thực hiện phép cộng, trừ, nhân, chia)\n126 252 255 510 513 1026 ?",
-		"image": null,
-		"answer": "1029",
-		"explanation": "Quy tắc:\n*2, +3, *2, +3, *2, +3",
-		"id": 223,
-		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Tìm số cuối cùng trong dãy dựa vào quy luật dãy số (các số trong dãy chỉ có thể thực hiện phép cộng, trừ, nhân, chia)\n-9 -6 -7 -4 -5 -2 ?",
-		"image": null,
-		"answer": "-3",
-		"explanation": "Quy tắc: +3, -1, +3, -1, +3, -1",
-		"id": 224,
-		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Tìm số cuối cùng trong dãy dựa vào quy luật dãy số (các số trong dãy chỉ có thể thực hiện phép cộng, trừ, nhân, chia)\n-23 -21 -42 -40 -80 -78 ?",
-		"image": null,
-		"answer": "-156",
-		"explanation": "Quy tắc: +2, *2, +2, *2, +2, *2",
-		"id": 225,
-		"choices": []
 	},
 	{
 		"difficulty": 4,
@@ -1976,7 +776,7 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Hình chỉ có quy luật từ trái sang phải hoặc\/và từ trên xuống dưới. Tìm hình phù hợp điền ô trống",
+		"question": "Hình dưới đây có quy luật từ trái sang phải hoặc\/và từ trên xuống dưới. Tìm hình phù hợp điền ô trống.",
 		"image": "Screenshot 2025-03-13 084745.png",
 		"answer": 3,
 		"explanation": "Từ trái sang phải: mũi tên quay ngược chiều kim đồng hồ 45 độ, rồi quay theo chiều kim đồng hồ 90 độ",
@@ -1990,7 +790,7 @@
 	},
 	{
 		"difficulty": 3,
-		"question": "Hình chỉ có quy luật từ trái sang phải hoặc\/và từ trên xuống dưới. Tìm hình phù hợp điền ô trống",
+		"question": "Hình dưới đây có quy luật từ trái sang phải hoặc\/và từ trên xuống dưới. Tìm hình phù hợp điền ô trống.",
 		"image": "Copy of Screenshot 2025-03-13 144018.png",
 		"answer": 2,
 		"explanation": "Từ trái sang phải: đường cong xoay theo chiều kim đồng hồ góc 45 độ. Đường có hai dấu chấm giữ nguyên vị trí\nTừ trên xuống dưới: đường mũi tên xoay theo chiều kim đồng hồ góc 45 độ.",
@@ -2005,52 +805,11 @@
 	{
 		"difficulty": 4,
 		"question": "Điền số thích hợp vào vị trí dấu hỏi chấm.",
-		"image": "https:\/\/media-cdn-v2.laodong.vn\/Storage\/NewsPortal\/2020\/10\/3\/841440\/Cau-Do-1.png",
-		"answer": "36",
-		"explanation": "Hiệu ba số trong mỗi cột bằng 8.\n\nTa có: 16 - 4 - 4 = 8.\n\n24 - 8 - 8 = 8.\n\n36 - 22 - 6 = 8.\n\nVậy nên: 49 - 36 - 5 = 8.",
-		"id": 232,
-		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Điền số thích hợp vào vị trí dấu hỏi chấm.",
-		"image": "https:\/\/media-cdn-v2.laodong.vn\/Storage\/NewsPortal\/2020\/10\/3\/841440\/Cau-Do-2.png",
-		"answer": "6",
-		"explanation": "Trong mỗi cột, số dưới gấp hai lần số trên liền kề.\n\n9 * 2 = 18; 18 * 2 = 36.\n5 * 2 = 10; 10 * 2 = 20.\n\nVậy nên: 3 * 2 = 6; 6 * 2 =12.",
-		"id": 233,
-		"choices": []
-	},
-	{
-		"difficulty": 4,
-		"question": "Điền số thích hợp vào vị trí dấu hỏi chấm.",
-		"image": "https:\/\/media-cdn-v2.laodong.vn\/Storage\/NewsPortal\/2020\/10\/3\/841440\/Cau-Do-3.png",
-		"answer": "52",
-		"explanation": "Số sau là tổng của số trước liền kề và các số cấu tạo nên số đó.\n\n19 + (1 + 9) = 29.\n29 + (2 + 9) = 40.\n40 + (4 + 0) = 44.\n\nVậy nên: 44 + (4 + 4) = 52.",
-		"id": 234,
-		"choices": []
-	},
-	{
-		"difficulty": 4,
-		"question": "Điền số thích hợp vào vị trí dấu hỏi chấm.",
 		"image": "https:\/\/media-cdn-v2.laodong.vn\/Storage\/NewsPortal\/2020\/10\/3\/841440\/Cau-Do-4.png",
 		"answer": "12",
 		"explanation": "Ở mỗi hình, tích hai số ở dưới chia số ở trên thì bằng 3.\n\n6 * 2 \/ 4 = 3.\n2 * 12 \/ 8 = 3.\n5 * 6 \/ 10 = 3.\n\nVậy nên: 4 * 9 \/ 12 = 3.",
 		"id": 235,
 		"choices": []
-	},
-	{
-		"difficulty": 3,
-		"question": "Có 5 cái khóa và 5 cái chìa của nó nhưng bị để lẫn lộn. Hỏi cần thử nhiều nhất bao nhiêu lần để tìm được đúng chìa khóa cho cả 5 khóa đó?",
-		"image": null,
-		"answer": 1,
-		"explanation": "Ở khóa thứ nhất, ta cần thử nhiều nhất 4 lần. Nếu cả 4 chìa đều không mở được thì chìa còn lại chính là chìa để mở khóa đó. Tương tự, ở khóa thứ hai, thứ ba, thứ tư ta cần nhiều nhất số lần thử tương ứng là: 3, 2, 1. Khóa thứ năm không cần thử vì ta đã biết chìa đúng của 4 khóa nên chìa còn lại chính là của ổ thứ năm. $4 + 3 + 2 + 1 = 10.$",
-		"id": 237,
-		"choices": [
-			"8",
-			"10",
-			"12",
-			"14"
-		]
 	},
 	{
 		"difficulty": 3,
@@ -2081,6 +840,20 @@
 		]
 	},
 	{
+		"difficulty": 4,
+		"question": "Có hai loại người sống trên một hòn đảo. Loại người \"thật thà\" luôn nói thật và loại người \"dối trá\" luôn nói dối. Một lần, Hoa hậu Trái đất đến thăm đảo và nói chuyện với 11 người dân trên đảo (họ đều biết rõ về nhau). Hoa hậu hỏi lần lượt hỏi 11 người: \"Trong số các bạn có bao nhiêu người thật thà\"? Chín người đầu tiên có câu trả lời là: 4, 1, 6, 0, 1, 5, 7, 5, 6.\n\nHãy đoán xem người cuối cùng sẽ nói số nào?",
+		"image": null,
+		"answer": 0,
+		"explanation": "Chúng ta có nhận xét then chốt: \"Nếu trong 11 người có N người thật thà thì sẽ có đúng N câu trả lời là số N\".\n\nDo 9 người đầu tiên có 9 câu trả lời là: 4, 1, 6, 0, 1, 5, 7, 5, 6 nên 9 người đầu tiên đều là 9 người \"dối trá\". Từ đó các câu trả lời số người nói dối là 0 hay 1 đều sai nên 2 người còn lại đều là 2 người \"thật thà\" và cả 2 đều cùng nói số 2.",
+		"id": 240,
+		"choices": [
+			"2",
+			"3",
+			"4",
+			"5"
+		]
+	},
+	{
 		"difficulty": 3,
 		"question": "Dãy số 11, 14, 17, …, 65, 68 có bao nhiêu số hạng?",
 		"image": null,
@@ -2095,11 +868,25 @@
 		]
 	},
 	{
+		"difficulty": 4,
+		"question": "Trên một dòng sông, có một người lái thuyền phải chở một con sói, một con dê và một chiếc bắp cải sang bờ bên kia. Khó một nỗi là thuyền của bác nhỏ nên mỗi chuyến chỉ chở được hoặc một con dê, hoặc một con sói, hoặc một chiếc bắp cải. Nhưng nếu chó sói đứng cạnh dê thì chó sói sẽ ăn thịt dê, mà dê dứng cạnh bắp cải sẽ ăn thịt bắp cải.\n\nLàm thế nào bây giờ? Bác lái thuyền suy nghĩ một lúc rồi reo lên: \"Ta đã có cách\". Và rồi bác đã hoàn thành công việc thật xuất sắc. Đố các bạn biết bác cần ít nhất bao nhiêu lượt đi để di chuyển thành công mọi vật qua sông?",
+		"image": null,
+		"answer": 1,
+		"explanation": "Lần thứ nhất: Bác chở dê sang sông để sói và bắp cải ở lại vì sói không ăn bắp cải. Bác quay thuyền trở về.\nLần thứ hai: Bác chở sói sang sông nhưng khi đưa sói lên bờ đồng thời bác lại cho dê xuống thuyền về bên kia vì nếu để dê lại thì dê sẽ là miếng mồi ngon của sói.\nLần thứ ba: Bác chở bắp cải sang sông. Như vậy sói và bắp cải đã sang sông. Bác quay trở về bến cũ nơi có chú dê đang đợi.\nLần thứ tư: Bác chở nốt chú dê sang sông",
+		"id": 242,
+		"choices": [
+			"3",
+			"4",
+			"5",
+			"6"
+		]
+	},
+	{
 		"difficulty": 3,
 		"question": "Tìm một số, biết rằng tăng số đó gấp đôi, sau đó cộng với 16 rồi bớt đi 4 và cuối cùng chia cho 3 ta được kết quả bằng 12.",
 		"image": null,
 		"answer": 1,
-		"explanation": null,
+		"explanation": "(x*2+16-4)\/3 = 12 => x = 12",
 		"id": 243,
 		"choices": [
 			"10",

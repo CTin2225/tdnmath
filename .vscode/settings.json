@@ -1,21 +1,21 @@
 {
-  "deno.enable": true,
-  "deno.lint": true,
-  "editor.defaultFormatter": "dprint.dprint",
-  "editor.formatOnSave": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "css.customData": [
-    ".vscode/tailwind.json"
-  ],
+	"deno.enable": true,
+	"deno.lint": true,
+	"editor.defaultFormatter": "dprint.dprint",
+	"editor.formatOnSave": true,
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "dprint.dprint"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "dprint.dprint"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "dprint.dprint"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "dprint.dprint"
+	},
+	"css.customData": [
+		".vscode/tailwind.json"
+	]
 }

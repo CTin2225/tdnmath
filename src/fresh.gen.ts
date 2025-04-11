@@ -2,50 +2,50 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $_404 from "./routes/_404.tsx";
-import * as $_app from "./routes/_app.tsx";
-import * as $_layout from "./routes/_layout.tsx";
-import * as $api_multiplayer from "./routes/api/multiplayer.ts";
-import * as $api_resetDbDangerous from "./routes/api/resetDbDangerous.ts";
-import * as $api_resetScoresDangerous from "./routes/api/resetScoresDangerous.ts";
-import * as $api_score from "./routes/api/score.ts";
-import * as $browser from "./routes/browser.tsx";
-import * as $index from "./routes/index.tsx";
-import * as $leaderboard from "./routes/leaderboard.tsx";
-import * as $multiplayer_hostd5d84d68812e from "./routes/multiplayer/hostd5d84d68812e.tsx";
-import * as $multiplayer_join from "./routes/multiplayer/join.tsx";
-import * as $singleplayer from "./routes/singleplayer.tsx";
-import * as $Browser from "./islands/Browser.tsx";
-import * as $ID from "./islands/ID.tsx";
-import * as $MultiplayerClient from "./islands/MultiplayerClient.tsx";
-import * as $MultiplayerHost from "./islands/MultiplayerHost.tsx";
-import * as $Singleplayer from "./islands/Singleplayer.tsx";
-import type { Manifest } from "$fresh/server.ts";
+import type { Manifest } from "$fresh/server.ts"
+import * as $Browser from "./islands/Browser.tsx"
+import * as $ID from "./islands/ID.tsx"
+import * as $MultiplayerClient from "./islands/MultiplayerClient.tsx"
+import * as $MultiplayerHost from "./islands/MultiplayerHost.tsx"
+import * as $Singleplayer from "./islands/Singleplayer.tsx"
+import * as $_404 from "./routes/_404.tsx"
+import * as $_app from "./routes/_app.tsx"
+import * as $_layout from "./routes/_layout.tsx"
+import * as $api_multiplayer from "./routes/api/multiplayer.ts"
+import * as $api_resetDbDangerous from "./routes/api/resetDbDangerous.ts"
+import * as $api_resetScoresDangerous from "./routes/api/resetScoresDangerous.ts"
+import * as $api_score from "./routes/api/score.ts"
+import * as $browser from "./routes/browser.tsx"
+import * as $index from "./routes/index.tsx"
+import * as $leaderboard from "./routes/leaderboard.tsx"
+import * as $multiplayer_hostd5d84d68812e from "./routes/multiplayer/hostd5d84d68812e.tsx"
+import * as $multiplayer_join from "./routes/multiplayer/join.tsx"
+import * as $singleplayer from "./routes/singleplayer.tsx"
 
 const manifest = {
-  routes: {
-    "./routes/_404.tsx": $_404,
-    "./routes/_app.tsx": $_app,
-    "./routes/_layout.tsx": $_layout,
-    "./routes/api/multiplayer.ts": $api_multiplayer,
-    "./routes/api/resetDbDangerous.ts": $api_resetDbDangerous,
-    "./routes/api/resetScoresDangerous.ts": $api_resetScoresDangerous,
-    "./routes/api/score.ts": $api_score,
-    "./routes/browser.tsx": $browser,
-    "./routes/index.tsx": $index,
-    "./routes/leaderboard.tsx": $leaderboard,
-    "./routes/multiplayer/hostd5d84d68812e.tsx": $multiplayer_hostd5d84d68812e,
-    "./routes/multiplayer/join.tsx": $multiplayer_join,
-    "./routes/singleplayer.tsx": $singleplayer,
-  },
-  islands: {
-    "./islands/Browser.tsx": $Browser,
-    "./islands/ID.tsx": $ID,
-    "./islands/MultiplayerClient.tsx": $MultiplayerClient,
-    "./islands/MultiplayerHost.tsx": $MultiplayerHost,
-    "./islands/Singleplayer.tsx": $Singleplayer,
-  },
-  baseUrl: import.meta.url,
-} satisfies Manifest;
+	routes: {
+		"./routes/_404.tsx": $_404,
+		"./routes/_app.tsx": $_app,
+		"./routes/_layout.tsx": $_layout,
+		"./routes/api/multiplayer.ts": $api_multiplayer,
+		"./routes/api/resetDbDangerous.ts": $api_resetDbDangerous,
+		"./routes/api/resetScoresDangerous.ts": $api_resetScoresDangerous,
+		"./routes/api/score.ts": $api_score,
+		"./routes/browser.tsx": $browser,
+		"./routes/index.tsx": $index,
+		"./routes/leaderboard.tsx": $leaderboard,
+		"./routes/multiplayer/hostd5d84d68812e.tsx": $multiplayer_hostd5d84d68812e,
+		"./routes/multiplayer/join.tsx": $multiplayer_join,
+		"./routes/singleplayer.tsx": $singleplayer,
+	},
+	islands: {
+		"./islands/Browser.tsx": $Browser,
+		"./islands/ID.tsx": $ID,
+		"./islands/MultiplayerClient.tsx": $MultiplayerClient,
+		"./islands/MultiplayerHost.tsx": $MultiplayerHost,
+		"./islands/Singleplayer.tsx": $Singleplayer,
+	},
+	baseUrl: import.meta.url,
+} satisfies Manifest
 
-export default manifest;
+export default manifest

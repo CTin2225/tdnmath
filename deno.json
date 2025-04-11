@@ -1,58 +1,58 @@
 {
-  "lock": false,
-  "tasks": {
-    "check": "deno lint && deno check **/*.ts*",
-    "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
-    "manifest": "deno task cli manifest $(pwd)",
-    "start": "deno run --unstable-broadcast-channel --unstable-kv -A --watch=src/static/,src/routes/ src/dev.ts",
-    "build": "deno run --unstable-broadcast-channel --unstable-kv -A src/dev.ts build",
-    "preview": "deno run --unstable-broadcast-channel --unstable-kv -A src/main.ts",
-    "update": "deno run --unstable-broadcast-channel --unstable-kv -A -r https://fresh.deno.dev/update ."
-  },
-  "lint": {
-    "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
-    }
-  },
-  "exclude": [
-    "**/_fresh/*"
-  ],
-  "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.7.3/",
-    "katex": "npm:katex@^0.16.21",
-    "preact": "https://esm.sh/preact@10.22.0",
-    "preact/": "https://esm.sh/preact@10.22.0/",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
-    "qrcode": "https://deno.land/x/qrcode@v2.0.0/mod.ts",
-    "tailwindcss": "npm:tailwindcss@3.4.1",
-    "tailwindcss/": "npm:/tailwindcss@3.4.1/",
-    "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
-    "$std/": "https://deno.land/std@0.216.0/"
-  },
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact",
-    "lib": [
-      "deno.unstable",
-      "dom",
-      "deno.ns"
-    ]
-  },
-  "nodeModulesDir": "auto",
-  "unstable": [
-    "kv",
-    "broadcast-channel"
-  ],
-  "deploy": {
-    "project": "43f1c0cb-6f8d-4b2f-9004-6e22762012df",
-    "exclude": [
-      "**/node_modules"
-    ],
-    "include": [],
-    "entrypoint": "src/main.ts"
-  }
+	"lock": false,
+	"tasks": {
+		"check": "deno lint && deno check **/*.ts*",
+		"cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
+		"manifest": "deno task cli manifest $(pwd)",
+		"start": "deno run --unstable-broadcast-channel --unstable-kv -A --watch=src/static/,src/routes/ src/dev.ts",
+		"build": "deno run --unstable-broadcast-channel --unstable-kv -A src/dev.ts build",
+		"preview": "deno run --unstable-broadcast-channel --unstable-kv -A src/main.ts",
+		"update": "deno run --unstable-broadcast-channel --unstable-kv -A -r https://fresh.deno.dev/update ."
+	},
+	"lint": {
+		"rules": {
+			"tags": [
+				"fresh",
+				"recommended"
+			]
+		}
+	},
+	"exclude": [
+		"**/_fresh/*"
+	],
+	"imports": {
+		"$fresh/": "https://deno.land/x/fresh@1.7.3/",
+		"katex": "npm:katex@^0.16.21",
+		"preact": "https://esm.sh/preact@10.22.0",
+		"preact/": "https://esm.sh/preact@10.22.0/",
+		"@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
+		"@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
+		"qrcode": "https://deno.land/x/qrcode@v2.0.0/mod.ts",
+		"tailwindcss": "npm:tailwindcss@3.4.1",
+		"tailwindcss/": "npm:/tailwindcss@3.4.1/",
+		"tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
+		"$std/": "https://deno.land/std@0.216.0/"
+	},
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
+		"lib": [
+			"deno.unstable",
+			"dom",
+			"deno.ns"
+		]
+	},
+	"nodeModulesDir": "auto",
+	"unstable": [
+		"kv",
+		"broadcast-channel"
+	],
+	"deploy": {
+		"project": "43f1c0cb-6f8d-4b2f-9004-6e22762012df",
+		"exclude": [
+			"**/node_modules"
+		],
+		"include": [],
+		"entrypoint": "src/main.ts"
+	}
 }

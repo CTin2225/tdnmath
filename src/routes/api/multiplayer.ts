@@ -125,9 +125,9 @@ export const handler: Handler = async (req, ctx) => {
 				case "start": {
 					const room = await kv.get<Room>(["room"])
 					const roomData = { questions: [
-						...pickRandom(questions.filter(e=> e.difficulty === 1), 3),
-						...pickRandom(questions.filter(e=> e.difficulty === 2), 3),
-						...pickRandom(questions.filter(e=> e.difficulty === 3), 2),
+						...pickRandom(questions.filter(e=> e.difficulty === 1), 1),
+						...pickRandom(questions.filter(e=> e.difficulty === 2), 2),
+						...pickRandom(questions.filter(e=> e.difficulty === 3), 3),
 						...pickRandom(questions.filter(e=> e.difficulty === 4), 1),
 						...pickRandom(questions.filter(e=> e.difficulty === 5), 1),
 					], ...room.value, status: "playing" }
