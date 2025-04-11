@@ -14,6 +14,7 @@ const KeyBoard = ({
     equationExpected,
     disabled,
     setDisabled,
+    setGameState,
 }: {
     screenArray: Row[];
     setScreenArray: React.Dispatch<React.SetStateAction<Row[]>>;
@@ -24,6 +25,7 @@ const KeyBoard = ({
     equationExpected: { left: string; right: string };
     disabled: string[];
     setDisabled: React.Dispatch<React.SetStateAction<string[]>>;
+    setGameState: React.Dispatch<React.SetStateAction<number>>;
 }) => {
     useEffect(() => {
         if (columnIndex <= 5) {
@@ -55,7 +57,8 @@ const KeyBoard = ({
             columnIndex,
             setColumnIndex,
             disabled,
-            setDisabled
+            setDisabled,
+            setGameState
         );
     };
 

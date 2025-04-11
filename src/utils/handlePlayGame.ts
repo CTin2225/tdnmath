@@ -36,7 +36,8 @@ const handlePlayGame = (
     columnIndex: number,
     setColumnIndex: React.Dispatch<React.SetStateAction<number>>,
     disabled: string[],
-    setDisabled: React.Dispatch<React.SetStateAction<string[]>>
+    setDisabled: React.Dispatch<React.SetStateAction<string[]>>,
+    setGameState: React.Dispatch<React.SetStateAction<number>>,
 ) => {
     const updatedScreenArray = [...screenArray];
 
@@ -84,8 +85,6 @@ const handlePlayGame = (
 
                     const rowResult = genColors(stringExpected, stringOutput);
 
-                    console.log(rowResult)
-
                     for (let i = 0; i < rowResult.length; i++) {
                         if (i >= 4)
                             updatedScreenArray[rowIndex].right[i - 4].state =
@@ -104,10 +103,12 @@ const handlePlayGame = (
                             break;
                         }
                     }
-                    if (checkAccepted)
+                    if (checkAccepted) {
                         newDisabled = Object.values(buttonNames).filter(
                             (item) => item !== "N"
                         );
+                        setGameState(2);
+                    }
 
                     setDisabled(newDisabled);
                     setRowIndex(rowIndex + 1);

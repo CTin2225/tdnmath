@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import KeyBoard from "./components/ui/KeyBoard";
 import Screen from "./components/ui/Screen";
@@ -167,6 +167,49 @@ function App() {
     const [columnIndex, setColumnIndex] = useState<number>(0);
     const [disabled, setDisabled] = useState<string[]>([]);
 
+    const [timeLeft, setTimeLeft] = useState<number>(90);
+    const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+    const [gameState, setGameState] = useState<number>(0);
+
+    const handleTimeOut = (gameState: number) => {
+        // alert("Hết giờ rồi thằng nhóc!");
+        if (gameState == 1) alert("Bạn thua rồi, chơi lại bạn nhé hihi");
+        else alert("Uầy bạn là nhất, nhất bạn rồi");
+
+        window.location.reload();
+    }
+    
+    useEffect(() => {
+        if (timerRef.current) clearInterval(timerRef.current) // Clear existing timer
+    
+        timerRef.current = setInterval(() => {
+          setTimeLeft((prevTime) => {
+            if (prevTime <= 1) {
+              clearInterval(timerRef.current!)
+              // Defer the call to onTimeout to avoid updating parent state during render
+              setTimeout(() => {
+                setGameState(1);
+              }, 0)
+              return 0
+            }
+            return prevTime - 1
+          })
+        }, 1000)
+    
+        return () => {
+          if (timerRef.current) clearInterval(timerRef.current)
+        }
+      }, [handleTimeOut])
+
+      useEffect(() => {
+        if (gameState == 0 && rowIndex >= 5) setGameState(1);
+      }, [rowIndex, gameState]);
+      useEffect(() => {
+        if (gameState == 0) return;
+        handleTimeOut(gameState);
+      }, [gameState]);
+
     useEffect(() => {
         const handleKeyDown = (e: { key: string }) => {
             let input = "";
@@ -202,7 +245,8 @@ function App() {
                     columnIndex,
                     setColumnIndex,
                     disabled,
-                    setDisabled
+                    setDisabled,
+                    setGameState
                 );
         };
         document.addEventListener("keydown", handleKeyDown);
@@ -214,6 +258,9 @@ function App() {
             <div className="max-w-[400px] w-full flex items-center flex-col">
                 <span className="text-3xl font-medium">MATHLE by Tổ Toán TĐN</span>
                 <Separator />
+                <h1 className="font-bold text-2xl mt-8">Thời gian còn lại: 
+                    <span className={`${timeLeft <= 10 ? "text-red-500" : "text-black"} ml-1`}>{timeLeft}s</span>
+                </h1>
                 <Screen screenArray={screenArray} />
                 <KeyBoard
                     screenArray={screenArray}
@@ -225,6 +272,7 @@ function App() {
                     equationExpected={equationExpected}
                     disabled={disabled}
                     setDisabled={setDisabled}
+                    setGameState={setGameState}
                 />
             </div>
         </div>
