@@ -47,7 +47,7 @@ export default function GameCard(props: GameCardProps) {
           src={`/${props.image}`}
           class="w-1/3 max-w-24 lg:w-full h-auto"
         />
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 mx-auto">
           <h2 class="text-xl font-bold">{props.name}</h2>
           <p class="">{props.description}</p>
         </div>
