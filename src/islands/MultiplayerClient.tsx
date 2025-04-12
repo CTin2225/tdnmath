@@ -159,7 +159,7 @@ export function MultiplayerClient() {
 					answers.value = data.data.answers
 					score.value = data.data.score
 					questionsList.value = data.data.questions
-					const curQ = 10 - answers.value.toReversed().findIndex((a, i) => a !== null && i < questionsList.value.length)
+					const curQ = 8 - answers.value.toReversed().findIndex((a, i) => a !== null && i < questionsList.value.length)
 					currentQuestion.value = curQ === 11 ? 0 : curQ
 					break
 				}
