@@ -121,7 +121,7 @@ export function MultiplayerHost() {
 						!player.connected && "opacity-50",
 					)}>
 						<span class="w-1/5">{player.name}</span>
-						<div class="w-full flex-1 grid grid-cols-10 gap-1">
+						<div class="w-full flex-1 grid grid-cols-8 gap-1">
 							{player.answers.map((ans, i) => (
 								<div key={i} class={cn(
 									"w-full flex-1 rounded-full h-2 transition-all",
