@@ -41,12 +41,6 @@ export default function Home() {
 						Tham gia phòng chơi nhóm
 					</Mode>
 				</div>
-				<hr class="border border-gray-400/50 w-11/12" />
-				<Mode accent="#000" href="/browser">
-					<strong class="text-2xl">
-						Kiểm tra câu hỏi
-					</strong>
-				</Mode>
 			</div>
 			<PlayerID />
 		</div>
