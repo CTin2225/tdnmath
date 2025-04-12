@@ -46,7 +46,7 @@ export const handler: Handler = async (req, ctx) => {
 
 		if (id !== "host") {
 			const player = await kv.get<Player>(["players", id])
-			socket.send(JSON.stringify({ type: "welcome", data: { id, answers: Array(10).fill(null), score: 0, ...player.value } }))
+			socket.send(JSON.stringify({ type: "welcome", data: { id, answers: Array(8).fill(null), score: 0, ...player.value } }))
 		} else {
 			const players = kv.list<Player>({ prefix: ["players"] })
 			for await (const player of players) {
@@ -67,7 +67,7 @@ export const handler: Handler = async (req, ctx) => {
 				case "join": {
 					clients.set(data.data.id, socket)
 					const existingPlayer = await kv.get<Player>(["players", data.data.id])
-					const playerData = { id: data.data.id, name: data.data.name.trim(), answers: Array(10).fill(null), score: 0,
+					const playerData = { id: data.data.id, name: data.data.name.trim(), answers: Array(8).fill(null), score: 0,
 						...existingPlayer.value }
 					await kv.set(["players", data.data.id], playerData)
 
