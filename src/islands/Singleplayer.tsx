@@ -151,7 +151,7 @@ export default function Singleplayer(props: { questions: Question[] }) {
 				<span>Điểm</span>
 				<span class="text-2xl font-bold">{score.value}</span>
 			</div>
-			<div class="grid grid-cols-10 gap-1">
+			<div class="grid grid-cols-8 gap-1">
 				{answers.value.map((c, i) => (
 					<div key={i} class={cn(
 						"flex-1 rounded-full h-2 transition-all",
