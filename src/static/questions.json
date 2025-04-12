@@ -201,7 +201,7 @@
 	{
 		"difficulty": 4,
 		"question": "Điền số còn thiếu vào \"?\".",
-		"image": "Ảnh chụp màn hình 2025-03-12 205405 - Nguyễn Đường Gia Truyền.png",
+		"image": "205405 - Nguyễn Đường Gia Truyền.png",
 		"answer": "29",
 		"explanation": "Tích 2 số lớn trừ số bé nhất bình phương: 9*5 - 4*4",
 		"id": 49,
@@ -307,7 +307,7 @@
 	{
 		"difficulty": 4,
 		"question": "Sau khi ăn 2 chiếc pizza, bạn Meo vẫn còn đang đói và thèm được ngấu nghiến miếng pizza \"??\" cuối cùng, tuy nhiên bạn ấy phải tìm được hàm lượng calo của miếng đó để tránh bị béo phì:\nNếu hàm lượng calo miếng pizza đó <= 25: bạn Meo được ăn\nNếu hàm lượng calo miếng pizza đó > 25: bạn Meo không được ăn\nHỏi bạn Meo có được ăn không?",
-		"image": "Ảnh chụp màn hình 2025-03-12 214639 - Nguyễn Đường Gia Truyền.png",
+		"image": "214639 - Nguyễn Đường Gia Truyền.png",
 		"answer": 0,
 		"explanation": "Hai số bên phải cộng lại = Số bên trái nhân 5:\nVí dụ: 27*5 = 56 + 79\n\n=> ? = 16*5 - 56 => ? = 24",
 		"id": 59,
